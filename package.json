@@ -1,0 +1,43 @@
+{
+  "name": "jauntcut",
+  "version": "0.1.0",
+  "description": "Turn raw phone footage into beat-cut travel reels: edits as code, on-device vision, and quality gates before every render.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "studio": "tsx scripts/topics.ts && remotion studio",
+    "new": "bash scripts/new-topic.sh",
+    "media": "bash scripts/prepare.sh",
+    "check": "tsx scripts/topics.ts && tsx scripts/check.ts",
+    "render": "bash scripts/render.sh",
+    "typecheck": "tsx scripts/topics.ts && tsc",
+    "sort": "tsx scripts/sort.ts",
+    "rename-topic": "bash scripts/rename-topic.sh",
+    "review": "python3 scripts/review.py",
+    "timing-test": "python3 scripts/timing_test.py",
+    "layout": "tsx scripts/layout.ts",
+    "qa": "python3 scripts/qa.py",
+    "regress": "tsx scripts/topics.ts && tsx scripts/regress.ts",
+    "song": "tsx scripts/song.ts",
+    "derive": "tsx scripts/derive.ts",
+    "peek": "tsx scripts/peek.ts",
+    "post-topic": "bash scripts/post-topic.sh",
+    "postinstall": "tsx scripts/topics.ts"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.534",
+    "@remotion/google-fonts": "4.0.534",
+    "@remotion/media-utils": "4.0.534",
+    "@remotion/motion-blur": "4.0.534",
+    "@remotion/zod-types": "4.0.534",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.534",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}

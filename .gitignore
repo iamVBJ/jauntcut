@@ -1,0 +1,37 @@
+# Dependencies, caches, local settings
+node_modules
+.cache
+.env
+.DS_Store
+
+# Generated
+out
+review
+logs
+public/*
+!public/fonts
+src/topics.generated.ts
+
+# Your own reels, places, footage and songs stay on your machine
+# (size, privacy, music rights). Only the template topic is part of the project.
+topics/*
+!topics/_template
+places.json
+inbox
+music
+*.mp4
+*.MP4
+*.mov
+*.MOV
+*.HEIC
+*.heic
+*.jpg
+*.JPG
+*.jpeg
+*.png
+*.wav
+*.mp3
+*.m4a
+
+# Reels you have posted, moved out of the working set by `npm run post-topic`
+posted
