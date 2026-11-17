@@ -86,6 +86,8 @@
   // ---------- The timeline, driven by the hero reel ----------
   var head = $('#playhead'), tl = $('.timeline');
   var segs = $$('#track .seg');
+  var files = $$('.bin .file');
+  files.forEach(function (f, n) { f.style.setProperty('--n', n); });
   var tc = $('#hero-tc'), beatEl = $('#beat'), pulse = $('#pulse');
   var meters = $$('#meters i');
   var DUR = 21.1, NBEATS = Math.round(DUR / BEAT);
@@ -117,7 +119,9 @@
     var tick = function () {
       var t = reel.currentTime || 0, d = reel.duration || DUR;
       tl.style.setProperty('--t', Math.min(1, t / d).toFixed(4));
-      segs.forEach(function (s) { s.classList.toggle('on', t >= +s.dataset.from && t < +s.dataset.to); });
+      var src = null;
+      segs.forEach(function (s) { var on = t >= +s.dataset.from && t < +s.dataset.to; s.classList.toggle('on', on); if (on) src = s.dataset.file; });
+      files.forEach(function (f) { f.classList.toggle('on', f.dataset.file === src); });
       if (tc) tc.textContent = '00:' + pad(Math.floor(t)) + ':' + pad(Math.floor((t % 1) * 60));
       var bi = Math.floor(t / BEAT);
       if (bi !== lastBeat) {
@@ -178,9 +182,10 @@
       });
       if (pipe) {
         var pr = pipe.getBoundingClientRect();
-        var pp = Math.max(0, Math.min(1, (vh * 0.75 - pr.top) / (pr.height * 0.6)));
+        // Starts once the steps are well on screen (top past 60% of the height), full by the time they reach 20%.
+        var pp = Math.max(0, Math.min(1, (vh * 0.6 - pr.top) / (vh * 0.4)));
         pipe.style.setProperty('--p', pp.toFixed(3));
-        steps.forEach(function (s, i) { s.classList.toggle('lit', pp >= i / steps.length + 0.02 || pp === 1); });
+        steps.forEach(function (s, i) { s.classList.toggle('lit', pp > 0 && pp >= i / steps.length); });
       }
     });
   };
@@ -190,23 +195,34 @@
   // ---------- Vision readings ----------
   var viewer = $('#viewer'), readings = $$('.reading'), vtag = $('#viewer-tag');
   if (viewer && readings.length) {
-    var imgs = $$('img', viewer), cur = 0, timer = null, DWELL = 4000, visible = false, picked = false;
+    // Each reading: the measurement for ANALYSE ms, then the effect it enables wipes in; next after DWELL.
+    var rds = $$('.rd', viewer), cur = 0, timer = null, fxTimer = null, visible = false, picked = false;
+    var ANALYSE = 1300, DWELL = 3400;
     viewer.parentNode.style.setProperty('--dur', DWELL + 'ms');
+    var tag = function (i, fx) {
+      if (!vtag) return;
+      var r = rds[i];
+      vtag.textContent = 'ABCD'[i] + ' · ' + (fx ? '→ ' + r.dataset.fx : r.dataset.an);
+    };
     var show = function (i) {
       cur = i;
-      imgs.forEach(function (im, j) { im.classList.toggle('on', j === i); });
+      clearTimeout(timer); clearTimeout(fxTimer);
+      rds.forEach(function (r, j) { r.classList.toggle('on', j === i); r.classList.remove('fx-on'); });
       readings.forEach(function (r, j) {
         r.classList.remove('on'); r.setAttribute('aria-selected', String(j === i));
         if (j === i) { void r.offsetWidth; r.classList.add('on'); }
       });
-      if (vtag) vtag.textContent = 'ABCD'[i] + ' · ' + readings[i].querySelector('strong').textContent.toLowerCase();
-      if (!calm) { viewer.classList.remove('scanning'); void viewer.offsetWidth; viewer.classList.add('scanning'); }
-      clearTimeout(timer);
-      if (!calm && !picked && visible) timer = setTimeout(function () { show((cur + 1) % imgs.length); }, DWELL);
+      tag(i, false);
+      var hasFx = !!rds[i].dataset.fx, dwell = hasFx ? DWELL : 2000;
+      viewer.parentNode.style.setProperty('--dur', (picked ? 1 : dwell) + 'ms');
+      if (calm) { if (hasFx) { rds[i].classList.add('fx-on'); tag(i, true); } return; }
+      viewer.classList.remove('scanning'); void viewer.offsetWidth; viewer.classList.add('scanning');
+      if (hasFx) fxTimer = setTimeout(function () { rds[i].classList.add('fx-on'); tag(i, true); }, ANALYSE);
+      if (!picked && visible) timer = setTimeout(function () { show((cur + 1) % rds.length); }, dwell);
     };
     // A click stops the auto-cycle and holds that reading with its bar full.
     readings.forEach(function (r, i) {
-      r.addEventListener('click', function () { picked = true; viewer.parentNode.style.setProperty('--dur', '1ms'); show(i); });
+      r.addEventListener('click', function () { picked = true; show(i); });
     });
     if ('IntersectionObserver' in window && !calm) {
       new IntersectionObserver(function (es) {
