@@ -6,7 +6,8 @@
   "workers_dev": false,
   "preview_urls": false,
   "routes": [
-    { "pattern": "jauntcut.com", "custom_domain": true }
+    { "pattern": "jauntcut.com", "custom_domain": true },
+    { "pattern": "www.jauntcut.com", "custom_domain": true }
   ],
   "assets": {
     "directory": "./site",
