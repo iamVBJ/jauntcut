@@ -1,6 +1,6 @@
 # Jauntcut
 
-Turn raw phone footage into beat-cut travel reels (1080x1920, 30 fps) that look
+Turn raw phone footage into beat-cut travel reels (1080x1920, 60 fps) that look
 hand-edited, not templated.
 
 - **Edits are code.** Each reel is one `reel.ts` file: clips, lengths in beats, speed,
@@ -27,9 +27,25 @@ inbox/ --sort--> topics/<slug>/raw --media--> public/<slug> --review--> frame st
    -> check -> qa --pre -> render (Remotion) -> Instagram copy -> qa --post
 ```
 
+## Install
+
+On a Mac, paste this into Terminal:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/iamVBJ/jauntcut/main/install.sh | bash
+```
+
+It checks the Mac and Apple's command-line tools, installs Node, ffmpeg, NumPy and Pillow if
+they are missing (Homebrew), clones Jauntcut into `~/jauntcut`, installs its packages,
+downloads the depth model (checksums verified) and runs a self-check. It never uses `sudo`,
+and running it again updates an existing install. Options: `--check` (report only, change
+nothing), `--dir <path>`, `--no-depth`, `--yes`; pass them after `bash -s --`.
+Read [install.sh](install.sh) first if you prefer.
+
 ## Requirements
 
-- macOS on Apple Silicon with the Xcode command-line tools (`swiftc`), for the analysis steps
+- macOS 14 (Sonoma) or newer; Apple silicon recommended (Intel works, the vision steps are slower)
+- The Xcode command-line tools (`swiftc`), for the analysis steps
 - Node 20 or newer
 - ffmpeg and ffprobe (`brew install ffmpeg`)
 - Python 3 with NumPy and Pillow (`pip3 install numpy pillow`)
@@ -43,7 +59,9 @@ The macOS-only steps use Apple Vision, Core ML, `sips` and `avconvert`. Each Swi
 reads files and writes JSON or PNG, so a Linux version of any one step can replace it
 without touching the rest.
 
-## Setup
+## Manual setup
+
+The installer does all of this; by hand:
 
 ```bash
 npm ci                        # also generates src/topics.generated.ts

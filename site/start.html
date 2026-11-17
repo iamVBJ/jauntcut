@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get started · Jauntcut</title>
+  <meta name="description" content="Install Jauntcut on your Mac with one command and make your first travel reel: requirements, install options, the rules a reel must pass, every command, and troubleshooting." />
+  <link rel="canonical" href="https://jauntcut.com/start" />
+  <meta name="theme-color" content="#0b0b0d" />
+  <meta property="og:title" content="Get started with Jauntcut" />
+  <meta property="og:description" content="One command installs Jauntcut on a Mac. Then make your first reel in six steps." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jauntcut.com/start" />
+  <meta property="og:image" content="https://jauntcut.com/assets/media/vision-subject.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="Jauntcut home">
+        <img class="brand-mark" src="favicon.svg" alt="" width="26" height="26" />
+        Jauntcut
+      </a>
+      <ul class="nav-links">
+        <li><a href="./#how">How it works</a></li>
+        <li><a href="./#vision">Vision</a></li>
+        <li><a href="./#gates">Quality gates</a></li>
+        <li class="keep"><a href="https://github.com/iamVBJ/jauntcut">GitHub</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="docs">
+    <div class="wrap narrow">
+      <p class="kicker">Get started</p>
+      <h1>Install Jauntcut and make your first reel.</h1>
+      <p>Jauntcut runs from Terminal today: you put footage in a folder, describe the edit in a
+      small file, and render. Installing takes a few minutes, longer on a Mac that doesn't have
+      Apple's developer tools yet. A Mac app that needs no Terminal is next on the
+      <a href="./#road-title">roadmap</a>.</p>
+
+      <ul class="toc">
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#install">Install</a></li>
+        <li><a href="#first-reel">Your first reel</a></li>
+        <li><a href="#rules">What a reel must pass</a></li>
+        <li><a href="#commands">Commands</a></li>
+        <li><a href="#update">Update or remove</a></li>
+        <li><a href="#trouble">Troubleshooting</a></li>
+      </ul>
+
+      <h2 id="requirements">Requirements</h2>
+      <ul>
+        <li><strong>macOS 14 (Sonoma) or newer.</strong> Subject cutouts use a Vision feature that arrived in macOS 14.</li>
+        <li><strong>Apple silicon recommended.</strong> Intel Macs work, but the vision steps are much slower.</li>
+        <li><strong>About 2 GB of free space</strong> for Jauntcut and its renderer, plus room for your footage.</li>
+        <li><strong>Homebrew</strong> (<a href="https://brew.sh">brew.sh</a>), used to install Node and ffmpeg if you don't have them.</li>
+      </ul>
+      <p>The installer sets up everything else: Apple's command-line tools, Node 20 or newer, ffmpeg, and Python's NumPy and Pillow.</p>
+
+      <h2 id="install">Install</h2>
+      <p>Open Terminal (in Applications → Utilities), paste this and press Return:</p>
+      <div class="install">
+        <code>curl -fsSL https://raw.githubusercontent.com/iamVBJ/jauntcut/main/install.sh | bash</code>
+        <button class="copy" type="button">Copy</button>
+      </div>
+      <p>It installs into <code>~/jauntcut</code>. In order, it:</p>
+      <ol>
+        <li>Checks your Mac and Apple's command-line tools. If those are missing, macOS shows an install window; let it finish, then run the command again.</li>
+        <li>Installs Node and ffmpeg with Homebrew if they are missing (it asks first), and NumPy and Pillow for Python.</li>
+        <li>Downloads Jauntcut and its packages.</li>
+        <li>Downloads the depth model (Apple's Core ML build of Depth Anything V2 Small, 48 MB) and checks every file against its published checksum.</li>
+        <li>Runs a self-check: the code compiles, a Vision tool builds, Python's modules import.</li>
+      </ol>
+      <p>It never uses <code>sudo</code>, and running it again updates an existing install.</p>
+
+      <h3>Options</h3>
+      <p>Add options after <code>bash -s --</code>, for example:</p>
+<pre><code>curl -fsSL https://raw.githubusercontent.com/iamVBJ/jauntcut/main/install.sh | bash -s -- --check</code></pre>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Option</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td><code>--check</code></td><td>Only reports what is installed and what is missing. Changes nothing.</td></tr>
+            <tr><td><code>--dir &lt;path&gt;</code></td><td>Install somewhere other than <code>~/jauntcut</code>.</td></tr>
+            <tr><td><code>--no-depth</code></td><td>Skip the 48 MB depth model. You only need it for 3D moves on photos.</td></tr>
+            <tr><td><code>--yes</code></td><td>Install missing tools without asking.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Prefer to read it first?</h3>
+<pre><code>curl -fsSL -o install.sh https://raw.githubusercontent.com/iamVBJ/jauntcut/main/install.sh
+open -e install.sh        <span class="c"># read it in TextEdit</span>
+bash install.sh</code></pre>
+
+      <h2 id="first-reel">Your first reel</h2>
+      <ol class="steps">
+        <li><strong>Create a reel</strong>
+<pre><code>cd ~/jauntcut
+npm run new night-market</code></pre>
+          <p>This makes <code>topics/night-market/</code> with an empty edit file and two folders.</p></li>
+        <li><strong>Add footage and a song</strong>
+          <p>Put photos and videos in <code>topics/night-market/raw/</code> and one song in <code>topics/night-market/music/</code>. Straight from your phone is ideal: vertical, at least 1080×1920.</p></li>
+        <li><strong>Prepare the media</strong>
+<pre><code>npm run media night-market</code></pre>
+          <p>Converts every file to an edit-ready format and finds the song's beat.</p></li>
+        <li><strong>Write the edit</strong>
+          <p>Open <code>topics/night-market/reel.ts</code> and list your clips. Lengths are in beats of the song:</p>
+<pre><code>clips: [
+  { src: <span class="s">"IMG_0412.MOV"</span>, beats: 6 },
+  { src: <span class="s">"IMG_0415.HEIC"</span>, beats: 4, motion: <span class="s">"push-in"</span> },
+  { src: <span class="s">"IMG_0420.MOV"</span>, beats: 8, startAt: 2.5, transition: <span class="s">"dissolve"</span> },
+],</code></pre></li>
+        <li><strong>Preview</strong>
+<pre><code>npm run studio</code></pre>
+          <p>Opens the reel in your browser. It updates as you save the file.</p></li>
+        <li><strong>Render</strong>
+<pre><code>npm run render night-market</code></pre>
+          <p>Runs every check, then renders <code>out/night-market.mp4</code> and an upload-ready copy in <code>out/instagram/</code>. If a check fails, it names the clip and what to change; nothing renders until it passes.</p></li>
+      </ol>
+      <p>Every option a clip can take (speed ramps, slow motion, 15 transitions, 11 title styles, depth moves, text set into the scene) is listed in the <a href="https://github.com/iamVBJ/jauntcut#editing-tools-per-clip-in-reelts">editing reference</a>.</p>
+
+      <h2 id="rules">What a reel must pass</h2>
+      <p>The checks are strict on purpose: they catch what makes viewers scroll away. These are the ones a first reel usually meets (limits for the default <code>calm</code> style; <code>energetic</code> is tighter):</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Rule</th><th>Limit</th><th>If it fails</th></tr></thead>
+          <tbody>
+            <tr><td>Length</td><td>20 to 45 seconds</td><td>Add or remove beats.</td></tr>
+            <tr><td>No upscaling</td><td>Footage is never enlarged past its own pixels</td><td>Use footage of at least 1080×1920. A push-in or pan needs a little more room, which phone photos (3024×4032) have.</td></tr>
+            <tr><td>Opening</td><td>The first clip runs at most 1 s past the opening text</td><td>Shorten the first clip.</td></tr>
+            <tr><td>Photos mid-reel</td><td>At most 2 s, and they must move</td><td>Give the photo a <code>motion</code>, or fewer beats.</td></tr>
+            <tr><td>Holds</td><td>Still shots 1.6 s, gentle 3 s, moving 4 s</td><td>Trim the shot, or pick a livelier moment with <code>startAt</code>.</td></tr>
+            <tr><td>Closing</td><td>The last clip at most 4.6 s</td><td>Shorten the last clip.</td></tr>
+            <tr><td>Text</td><td>At most 17 characters a second</td><td>Shorten the line.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="commands">Commands</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td><code>npm run new &lt;name&gt;</code></td><td>Creates a reel folder from the template</td></tr>
+            <tr><td><code>npm run sort</code></td><td>Sorts everything in <code>inbox/</code> into reels by GPS and time</td></tr>
+            <tr><td><code>npm run review &lt;name&gt;</code></td><td>Frame strips, blur and shake, activity and burned-in text, to pick moments</td></tr>
+            <tr><td><code>npm run media &lt;name&gt;</code></td><td>Converts media and analyses the beat</td></tr>
+            <tr><td><code>npm run studio</code></td><td>Live preview in the browser</td></tr>
+            <tr><td><code>npm run check</code></td><td>Runs the pre-render checks only</td></tr>
+            <tr><td><code>npm run render &lt;name&gt;</code></td><td>Checks, renders, and makes the Instagram copy</td></tr>
+            <tr><td><code>npm run song -- search "&lt;title&gt;"</code></td><td>Finds a song to cut a guide copy of an Instagram sound</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="update">Update or remove</h2>
+      <p><strong>Update:</strong> run the install command again. It pulls the latest version and leaves your reels alone (they live in <code>topics/</code>, which updates never touch).</p>
+      <p><strong>Remove:</strong> delete the folder. Your own reels are inside it, so move any you want to keep first.</p>
+<pre><code>rm -rf ~/jauntcut</code></pre>
+      <p>Node, ffmpeg, NumPy and Pillow stay installed for other apps. Remove them with <code>brew uninstall node ffmpeg</code> if nothing else needs them.</p>
+
+      <h2 id="trouble">Troubleshooting</h2>
+      <h3>"A window asks to install the command line developer tools"</h3>
+      <p>Click Install and wait for it to finish (it can take several minutes), then run the install command again.</p>
+      <h3>"Homebrew not found"</h3>
+      <p>Install it from <a href="https://brew.sh">brew.sh</a>, open a new Terminal window, then run the install command again.</p>
+      <h3>"would upscale"</h3>
+      <p>The footage is smaller than the frame needs. Use the original file from your phone rather than a downloaded or messaged copy, or remove the <code>motion</code> or <code>zoom</code> on that clip.</p>
+      <h3>Not sure what is missing?</h3>
+      <p>Run the installer with <code>--check</code>. It lists every requirement and changes nothing. Still stuck? <a href="https://github.com/iamVBJ/jauntcut/issues">Open an issue</a> with its output.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>Jauntcut is free and open source (MIT). Built by <a href="https://vaibhav.cc/">Vaibhav Jadhav</a>.</span>
+      <nav aria-label="Footer">
+        <a href="./">Home</a>
+        <a href="https://github.com/iamVBJ/jauntcut">GitHub</a>
+        <a href="https://github.com/iamVBJ/jauntcut/issues">Report an issue</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>

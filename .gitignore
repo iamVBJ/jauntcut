@@ -35,3 +35,8 @@ music
 
 # Reels you have posted, moved out of the working set by `npm run post-topic`
 posted
+
+# The website (site/) ships its own media
+!site/**/*.mp4
+!site/**/*.jpg
+!site/**/*.png

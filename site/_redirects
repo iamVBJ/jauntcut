@@ -1,0 +1,3 @@
+# The installer lives in the repository; this keeps one copy of it.
+/install.sh  https://raw.githubusercontent.com/iamVBJ/jauntcut/main/install.sh  302
+/github      https://github.com/iamVBJ/jauntcut  302

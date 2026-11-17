@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jauntcut · Travel reels, cut from raw footage on your Mac</title>
+  <meta name="description" content="Jauntcut turns raw phone and GoPro footage into finished Instagram travel reels on your Mac. On-device computer vision, edits as typed code, and quality gates on every render. Free and open source." />
+  <link rel="canonical" href="https://jauntcut.com/" />
+  <meta name="theme-color" content="#0b0b0d" />
+  <meta property="og:title" content="Jauntcut · Travel reels, cut from raw footage" />
+  <meta property="og:description" content="On-device computer vision, edits as typed code, and quality gates that stop a bad cut before it renders. Free and open source, for macOS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jauntcut.com/" />
+  <meta property="og:image" content="https://jauntcut.com/assets/media/vision-subject.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Jauntcut",
+    "operatingSystem": "macOS",
+    "applicationCategory": "MultimediaApplication",
+    "description": "Turns raw phone and GoPro footage into finished Instagram travel reels with on-device computer vision, edits as typed code and automated quality gates.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "license": "https://opensource.org/licenses/MIT",
+    "codeRepository": "https://github.com/iamVBJ/jauntcut",
+    "author": { "@type": "Person", "name": "Vaibhav Jadhav", "url": "https://vaibhav.cc/" }
+  }
+  </script>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="Jauntcut home">
+        <img class="brand-mark" src="favicon.svg" alt="" width="26" height="26" />
+        Jauntcut
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#gates">Quality gates</a></li>
+        <li><a href="https://github.com/iamVBJ/jauntcut">GitHub</a></li>
+        <li class="keep"><a class="btn btn-primary btn-sm" href="start.html">Get started</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div>
+          <span class="eyebrow">Free · Open source · macOS</span>
+          <h1 id="hero-title">Travel reels, cut from raw footage <span>on your Mac.</span></h1>
+          <p class="hero-lead">
+            Jauntcut turns phone and GoPro clips into finished Instagram reels. Vision models
+            read every frame on your laptop, each edit is a small typed file, and quality gates
+            stop a bad cut before it renders.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="start.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><path d="M5 21h14"/></svg>
+              Install on Mac
+            </a>
+            <a class="btn btn-ghost" href="https://github.com/iamVBJ/jauntcut">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 00-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 015.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0012 .5z"/></svg>
+              View source
+            </a>
+          </div>
+          <ul class="hero-meta">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Footage never leaves your Mac</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>No account, no cloud API</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>MIT licensed</li>
+          </ul>
+        </div>
+        <div class="hero-reels" aria-label="Reels made with Jauntcut">
+          <div class="phone"><video src="assets/media/chiang-mai-circuit.mp4" poster="assets/media/chiang-mai-circuit.jpg" muted loop playsinline preload="metadata" width="720" height="1280"></video></div>
+          <div class="phone"><video src="assets/media/paramotoring.mp4" poster="assets/media/paramotoring.jpg" muted loop playsinline preload="metadata" width="720" height="1280"></video></div>
+          <div class="phone"><video src="assets/media/versailles-de-flore.mp4" poster="assets/media/versailles-de-flore.jpg" muted loop playsinline preload="metadata" width="720" height="1280"></video></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt" aria-labelledby="why-title">
+      <div class="wrap">
+        <p class="kicker">Why Jauntcut</p>
+        <h2 id="why-title">Hand-cut reels, without the evening of editing.</h2>
+        <p class="section-lead">
+          Phone editing apps make every place look like the same template. Jauntcut gives each
+          place its own type and transitions, and does the measurable work for you: timing to
+          the beat, placing text, catching repeats and colour jumps.
+        </p>
+        <div class="features">
+          <div class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/></svg></div>
+            <h3>Sees the footage</h3>
+            <p>Subject cutouts, depth, saliency, faces, on-screen text and stabilisation, all with Apple Vision and Core ML on your Mac.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+            <h3>Edits are code</h3>
+            <p>A reel is one small TypeScript file: clips, beats and effects. Easy to diff, version and repeat, and validated before anything renders.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+            <h3>Gates before render</h3>
+            <p>Text over a face, the same scene twice, a dead hold or a clipped highlight fails the check, with the exact clip and the fix.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div>
+            <h3>Cut to the beat</h3>
+            <p>Beat and tempo analysis puts every cut on the music. Works with your own track or a guide copy of a trending Instagram sound.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg></div>
+            <h3>11 title styles</h3>
+            <p>From handwritten to film-title lockups and race lettering set into the tarmac, each built once and reused on any reel.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="9" height="16" rx="2"/><rect x="13" y="4" width="9" height="16" rx="2"/></svg></div>
+            <h3>15 transitions</h3>
+            <p>Doorway portals, match cuts, whip pans, light-order dissolves and a sketch-to-watercolour wash, plus the plain cut.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="reels-title">
+      <div class="wrap">
+        <p class="kicker">Made with Jauntcut</p>
+        <h2 id="reels-title">Every reel gets its own look.</h2>
+        <p class="section-lead">Four reels cut from raw travel footage. Tap one to play it.</p>
+        <div class="gallery">
+          <figure>
+            <button class="phone" type="button" aria-pressed="false" aria-label="Play the Chiang Mai Circuit reel">
+              <video src="assets/media/chiang-mai-circuit.mp4" poster="assets/media/chiang-mai-circuit.jpg" muted loop playsinline preload="none" width="720" height="1280"></video>
+              <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+            <figcaption><strong>Chiang Mai Circuit</strong>The title is set into the tarmac and tracked; karts drive in front of the letters.</figcaption>
+          </figure>
+          <figure>
+            <button class="phone" type="button" aria-pressed="false" aria-label="Play the Artistic Village reel">
+              <video src="assets/media/artistic-village.mp4" poster="assets/media/artistic-village.jpg" muted loop playsinline preload="none" width="720" height="1280"></video>
+              <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+            <figcaption><strong>Artistic Village</strong>A handwritten title and a sketch-to-watercolour transition at two story moments.</figcaption>
+          </figure>
+          <figure>
+            <button class="phone" type="button" aria-pressed="false" aria-label="Play the Paramotoring reel">
+              <video src="assets/media/paramotoring.mp4" poster="assets/media/paramotoring.jpg" muted loop playsinline preload="none" width="720" height="1280"></video>
+              <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+            <figcaption><strong>Paramotoring</strong>Wide GoPro footage reframed into distinct angles; lift-off lands on the drop.</figcaption>
+          </figure>
+          <figure>
+            <button class="phone" type="button" aria-pressed="false" aria-label="Play the Versailles de Flore reel">
+              <video src="assets/media/versailles-de-flore.mp4" poster="assets/media/versailles-de-flore.jpg" muted loop playsinline preload="none" width="720" height="1280"></video>
+              <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+            <figcaption><strong>Versailles de Flore</strong>The camera pushes through a real doorway into the next shot.</figcaption>
+          </figure>
+        </div>
+        <p class="gallery-note">Shown without music here; songs are licensed on Instagram.</p>
+      </div>
+    </section>
+
+    <section id="how" class="section-alt" aria-labelledby="how-title">
+      <div class="wrap">
+        <p class="kicker">How it works</p>
+        <h2 id="how-title">Eight stages, in a fixed order.</h2>
+        <p class="section-lead">Each stage writes files the next one reads, so any stage can be rerun on its own, and a failed gate stops the render.</p>
+        <ol class="pipeline">
+          <li><b>Sort &amp; prepare</b><span>Sort by GPS and time; normalise phone, GoPro and photo media</span></li>
+          <li class="ai"><b>Analyse</b><span>Subjects, depth, saliency, faces, beats</span></li>
+          <li><b>Edit</b><span>One typed <code>reel.ts</code> per reel</span></li>
+          <li class="ai"><b>Layout</b><span>Text goes where it covers the least</span></li>
+          <li class="gate"><b>Check</b><span>Schema, media, timing and pacing rules</span></li>
+          <li class="gate"><b>QA before</b><span>Repeats, faces under text, colour jumps</span></li>
+          <li><b>Render</b><span>React compositions to 1080×1920</span></li>
+          <li class="gate"><b>QA after</b><span>Frozen frames, loudness, the Instagram file spec</span></li>
+        </ol>
+        <div class="legend" aria-hidden="true">
+          <span><i style="background:var(--ai)"></i>On-device models</span>
+          <span><i style="background:var(--gate)"></i>Quality gate (stops the render)</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision" aria-labelledby="vision-title">
+      <div class="wrap">
+        <p class="kicker">On-device vision</p>
+        <h2 id="vision-title">What Jauntcut sees in one frame.</h2>
+        <p class="section-lead">Every model runs from a small Swift tool on your Mac and writes JSON or PNG for the next stage. No frame is sent anywhere.</p>
+        <div class="vision">
+          <figure>
+            <img src="assets/media/vision-frame.jpg" alt="Raw GoPro frame: a paramotor pilot in a red suit above a green valley" width="960" height="540" loading="lazy" />
+            <figcaption><strong>The raw frame.</strong> Wide GoPro footage, before any edit.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/media/vision-subject.jpg" alt="The pilot cut out from the background with an outline" width="960" height="540" loading="lazy" />
+            <figcaption><strong>Subject cutout</strong> (Apple Vision). Titles sit behind people; subjects move in front of text.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/media/vision-depth.jpg" alt="Depth map: the pilot and frame bright and warm, the valley dark" width="960" height="540" loading="lazy" />
+            <figcaption><strong>Depth</strong> (Depth Anything V2, Core ML). 3D camera moves on stills and rack focus.</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/media/vision-saliency.jpg" alt="Attention heat map centred on the pilot, with the detected face boxed" width="960" height="540" loading="lazy" />
+            <figcaption><strong>Saliency and faces</strong> (Vision). Text goes where the eye is not, and never on a face.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt" aria-labelledby="code-title">
+      <div class="wrap split">
+        <div>
+          <p class="kicker">Edits as code</p>
+          <h2 id="code-title">A reel is one small, typed file.</h2>
+          <p class="muted">It lists the clips, their length in beats and every effect. A schema validates it before anything renders, so a typo or an impossible value fails in a second, not after a full render.</p>
+          <ul class="ticks">
+            <li><strong>Repeatable</strong>Change one line and render again. Every version is a diff.</li>
+            <li><strong>Reasons next to choices</strong>Comments record why each clip is there, so the next edit starts from that history.</li>
+            <li><strong>Preview live</strong><code>npm run studio</code> opens the reel in the browser while you edit.</li>
+          </ul>
+        </div>
+<pre><code><span class="k">export const</span> reel: <span class="n">ReelInput</span> = {
+  slug: <span class="s">"chiang-mai-circuit"</span>,
+  style: <span class="s">"energetic"</span>,
+  hook: <span class="s">"Not your usual Chiang Mai day"</span>,
+  titleStyle: <span class="s">"race"</span>,
+  clips: [
+    <span class="c">// line-up POV, the hook</span>
+    { src: <span class="s">"IMG_2595.MOV"</span>, beats: 10, startAt: 0.2 },
+    <span class="c">// a photo: we lift off the garage</span>
+    { src: <span class="s">"FF2905C1.jpg"</span>, beats: 3, motion: <span class="s">"push-in"</span>,
+      parallax: { amount: 0.07, x: 0.5, y: 1.0 } },
+    <span class="c">// the drop, at half speed</span>
+    { src: <span class="s">"IMG_2618.mov"</span>, beats: 6, startAt: 1.6,
+      ramp: { atBeat: 1, speed: 0.5 } },
+  ],
+};</code></pre>
+      </div>
+    </section>
+
+    <section id="gates" aria-labelledby="gates-title">
+      <div class="wrap">
+        <p class="kicker">Quality gates</p>
+        <h2 id="gates-title">Nothing renders until it passes.</h2>
+        <p class="section-lead">Each gate reports what the code actually produced. Thresholds come from measuring real footage, not defaults: the same scene shown twice measured a feature-print distance of 0.21 to 0.42 and different shots 0.49 or more, so the repeat gate fails below 0.45.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Gate</th><th>When</th><th>What it catches</th></tr></thead>
+            <tbody>
+              <tr><td>Schema</td><td>Before anything</td><td>Invalid or impossible edit settings</td></tr>
+              <tr><td><code>check</code></td><td>Before render</td><td>Missing media, upscaling past 1:1, clips running past their source, dead holds, text faster than 17 characters a second</td></tr>
+              <tr><td><code>qa --pre</code></td><td>Before render</td><td>The same scene twice, text over faces, colour jumps at cuts, clipped highlights, skin tones off the skin line</td></tr>
+              <tr><td><code>qa --post</code></td><td>After render</td><td>Black or frozen frames, loudness outside −16 to −10 LUFS, peaks above −1 dBFS, the Instagram file spec, leftover metadata</td></tr>
+              <tr><td><code>timing-test</code></td><td>Engine changes</td><td>Renders frames that encode their own number and reads every one back; fails on any error over one frame</td></tr>
+              <tr><td><code>regress</code></td><td>Engine changes</td><td>Hashes one frame per second of every finished reel, so a new feature cannot quietly change an old reel</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt" aria-labelledby="road-title">
+      <div class="wrap">
+        <p class="kicker">Roadmap</p>
+        <h2 id="road-title">Where Jauntcut is going.</h2>
+        <p class="section-lead">Today Jauntcut runs from Terminal and you write the edit file. The next releases make it work for anyone.</p>
+        <div class="roadmap">
+          <div class="card"><span class="tag tag-now">Available now</span><h3>One-command install</h3><p>Sets up everything on a Mac, downloads the depth model and checks the toolchain.</p></div>
+          <div class="card"><span class="tag tag-next">Next</span><h3>A Mac app</h3><p>Drop in your footage, pick a style, render. No Terminal and no code.</p></div>
+          <div class="card"><span class="tag tag-later">Later</span><h3>Directed by a sentence</h3><p>"Moody old village, slow" turned into a schema-checked edit, plus a look suggested from the music and footage.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div class="wrap">
+        <h2 id="cta-title">Make your first reel today.</h2>
+        <p class="section-lead" style="margin:0 auto">One command installs Jauntcut and everything it needs. Paste it into Terminal.</p>
+        <div class="install">
+          <code>curl -fsSL https://raw.githubusercontent.com/iamVBJ/jauntcut/main/install.sh | bash</code>
+          <button class="copy" type="button">Copy</button>
+        </div>
+        <p class="install-note">macOS 14 (Sonoma) or newer. Apple silicon recommended. <a href="start.html">Read the full guide</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>Jauntcut is free and open source (MIT). Built by <a href="https://vaibhav.cc/">Vaibhav Jadhav</a>.</span>
+      <nav aria-label="Footer">
+        <a href="start.html">Get started</a>
+        <a href="https://github.com/iamVBJ/jauntcut">GitHub</a>
+        <a href="https://github.com/iamVBJ/jauntcut/issues">Report an issue</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
