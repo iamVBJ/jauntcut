@@ -3,6 +3,8 @@
 Turn raw phone footage into beat-cut travel reels (1080x1920, 60 fps) that look
 hand-edited, not templated.
 
+Website and install guide: [jauntcut.com](https://jauntcut.com)
+
 - **Edits are code.** Each reel is one `reel.ts` file: clips, lengths in beats, speed,
   transitions, grade and title style. A Zod schema validates it before anything renders.
 - **On-device vision.** Small Swift tools run Apple Vision and Core ML locally for subject
@@ -32,7 +34,7 @@ inbox/ --sort--> topics/<slug>/raw --media--> public/<slug> --review--> frame st
 On a Mac, paste this into Terminal:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/iamVBJ/jauntcut/main/install.sh | bash
+curl -fsSL https://jauntcut.com/install.sh | bash
 ```
 
 It checks the Mac and Apple's command-line tools, installs Node, ffmpeg, NumPy and Pillow if

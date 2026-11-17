@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Jauntcut installer for macOS.
 #
-#   curl -fsSL https://raw.githubusercontent.com/iamVBJ/jauntcut/main/install.sh | bash
-#   curl -fsSL https://raw.githubusercontent.com/iamVBJ/jauntcut/main/install.sh | bash -s -- --dir ~/Code/jauntcut
+#   curl -fsSL https://jauntcut.com/install.sh | bash
+#   curl -fsSL https://jauntcut.com/install.sh | bash -s -- --dir ~/Code/jauntcut
 #
 # Options:
 #   --dir <path>   where to put Jauntcut (default: ~/jauntcut)
@@ -188,7 +188,7 @@ Make your first reel:
 Footage should be at least 1080x1920 (vertical), and a reel runs 20-45 seconds.
 npm run render checks the edit first and tells you exactly what to change.
 
-Guide: https://github.com/iamVBJ/jauntcut#readme
+Guide: https://jauntcut.com/start
 EOF
 }
 

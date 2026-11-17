@@ -3,6 +3,11 @@
   "$schema": "https://unpkg.com/wrangler@4.163.0/config-schema.json",
   "name": "jauntcut",
   "compatibility_date": "2026-11-17",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [
+    { "pattern": "jauntcut.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./site",
     "html_handling": "auto-trailing-slash",
