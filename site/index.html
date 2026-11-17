@@ -18,7 +18,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="assets/css/site.css?v=19" />
+  <script>(function(d){d.className+=" js";var on=function(){d.className+=" fonts-on"};if(document.fonts&&document.fonts.ready){Promise.race([document.fonts.ready,new Promise(function(r){setTimeout(r,1200)})]).then(on)}else on()})(document.documentElement)</script>
+  <link rel="stylesheet" href="assets/css/site.css?v=21" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -99,7 +100,7 @@
           <div class="monitor">
             <div class="mon-head"><span><b>PGM</b> · Program</span><span class="tc" id="hero-tc">00:00:00</span></div>
             <div class="mon-frame">
-              <video id="hero-reel" src="assets/media/chiang-mai-circuit.mp4" poster="assets/media/chiang-mai-circuit.jpg" muted loop playsinline preload="auto" width="720" height="1280" data-autoplay></video>
+              <video id="hero-reel" src="assets/media/hero-reel.mp4" poster="assets/media/chiang-mai-circuit.jpg" muted loop playsinline preload="auto" width="720" height="1280" data-autoplay></video>
               <span class="safe" aria-hidden="true"></span>
               <span class="cross" aria-hidden="true"></span>
               <span class="badge">LIVE OUTPUT</span>
@@ -204,29 +205,11 @@
           </div>
           <div class="card" data-reveal style="--d:1;--k:var(--c-violet)">
             <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 14V4h10M34 4h10v10M44 34v10H34M14 44H4V34"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="2" fill="currentColor"/></svg>
-            <div class="big">Sees</div><h3>Understands every frame</h3><p>Cuts people and karts out of the background, measures depth, finds where the eye goes and where the faces are, all with Apple's on-device vision models.</p>
+            <div class="big">Sees</div><h3>Understands every frame</h3><p>Cuts people and moving subjects out of the background, measures depth, finds where the eye goes and where the faces are, all with Apple's on-device vision models.</p>
           </div>
           <div class="card" data-reveal style="--d:2;--k:var(--red)">
             <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="38" height="38" rx="8"/><path d="m15 25 6 6 12-14"/></svg>
             <div class="big">Checks</div><h3>Refuses a bad edit</h3><p>Before anything renders, it checks length, pacing, text over faces, colour jumps and exposure, and tells you exactly which clip to fix.</p>
-          </div>
-        </div>
-        <div class="plain">
-          <div data-reveal>
-            <h3>Who it's for</h3>
-            <ul>
-              <li>People who film trips on a phone or GoPro and want a reel that looks hand-cut.</li>
-              <li>Creators who post often and want each place to get its own look.</li>
-              <li>Developers who like their edits as code: diffable, repeatable, reviewable.</li>
-            </ul>
-          </div>
-          <div data-reveal style="--d:1">
-            <h3>What you get</h3>
-            <ul>
-              <li>A vertical 1080×1920, 60 fps reel, 20 to 45 seconds long.</li>
-              <li>11 title styles and 15 transitions, each one line in the edit file.</li>
-              <li>No account, no upload, no watermark. Free under the MIT licence.</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -255,17 +238,17 @@
             <h3>Understand</h3>
             <p>On-device models map subjects, depth, attention and faces in every frame; beat analysis maps the song.</p>
             <div class="step-vis mini-vis" aria-hidden="true">
-              <img src="assets/media/vision-input.jpg" alt="" loading="lazy" /><img src="assets/media/vision-subject.jpg" alt="" loading="lazy" /><img src="assets/media/vision-depth.jpg" alt="" loading="lazy" /><img src="assets/media/vision-attention.jpg" alt="" loading="lazy" />
+              <img src="assets/media/vision-input.jpg?v=4" alt="" loading="lazy" /><img src="assets/media/vision-subject.jpg" alt="" loading="lazy" /><img src="assets/media/vision-depth.jpg" alt="" loading="lazy" /><img src="assets/media/vision-attention.jpg" alt="" loading="lazy" />
             </div>
           </div>
           <div class="step" data-reveal style="--d:2;--k:var(--c-amber)">
             <span class="step-n">03</span>
             <h3>Edit</h3>
             <p>You write the edit as one small file: which clips, how many beats, which effects. Preview it live in the browser.</p>
-            <div class="step-vis mini-code" aria-hidden="true"><span class="c">// the drop, half speed</span>
+            <div class="step-vis mini-code" aria-hidden="true"><span class="code-in"><span class="c">// the drop, half speed</span>
 { src: <span class="s">"IMG_2618.mov"</span>,
   beats: <span class="k">6</span>, startAt: <span class="k">1.6</span>,
-  scene: { text: <span class="s">"CHIANG MAI"</span> } }</div>
+  scene: { text: <span class="s">"CHIANG MAI"</span> } }</span></div>
           </div>
           <div class="step" data-reveal style="--d:3;--k:var(--red)">
             <span class="step-n">04</span>
@@ -289,7 +272,7 @@
           <div class="sec-head">
             <div class="sec-num"><b>03</b> Titles in the scene</div>
             <div>
-              <h2 id="scene-title" data-split>The title sits on the tarmac. <span class="it">The karts drive over it.</span></h2>
+              <h2 id="scene-title" data-split>The title sits in the scene. <span class="it">Your subject moves over it.</span></h2>
             </div>
           </div>
           <div class="showcase">
@@ -303,13 +286,13 @@
             </div>
             <div class="side">
               <div class="clip">
-                <div class="clip-frame"><video src="assets/media/circuit-scene.mp4" poster="assets/media/circuit-final.jpg" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div>
+                <div class="clip-frame"><video src="assets/media/circuit-scene.mp4" data-poster="assets/media/circuit-final.jpg" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div>
                 <div class="clip-cap"><span class="label"><b>●</b> Result</span><span class="label">00:07:30</span></div>
               </div>
               <ol class="notes" data-notes>
-                <li class="on"><span>01</span><div><strong>Tracked to the ground.</strong> The letters are pinned to the road surface and move with the camera, rising out of the tarmac on the beat.</div></li>
-                <li><span>02</span><div><strong>Cut out every frame.</strong> Apple Vision separates each kart from the background, frame by frame, so it drives in front of the words.</div></li>
-                <li><span>03</span><div><strong>Then it erases them.</strong> In the next shot a kart drives through "CIRCUIT" and wipes it away as it passes.</div></li>
+                <li class="on"><span>01</span><div><strong>Tracked to the ground.</strong> The letters are pinned to the ground in the shot and move with the camera, rising into place on the beat.</div></li>
+                <li><span>02</span><div><strong>Cut out every frame.</strong> Apple Vision separates the moving subject from the background, frame by frame, so it passes in front of the words.</div></li>
+                <li><span>03</span><div><strong>Then it erases them.</strong> When the subject crosses the title, it wipes the letters away as it passes.</div></li>
               </ol>
             </div>
           </div>
@@ -359,14 +342,14 @@
         <div class="trio">
           <figure data-reveal style="--d:0">
             <div class="clip"><div class="clip-frame"><video src="assets/media/versailles-portal.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div></div>
-            <figcaption><strong>Through a real doorway</strong>The camera pushes into a carved gate and the next shot opens inside its arch.</figcaption>
+            <figcaption><strong>Through a real doorway</strong>The camera pushes into a doorway or arch in the photo, and the next shot opens inside it.</figcaption>
           </figure>
           <figure data-reveal style="--d:1">
             <div class="clip"><div class="clip-frame liftoff" role="img" aria-label="A paraglider wing cut out of the sky and lifted towards the camera while the mountains behind it drift slowly">
               <img class="lo-bg" src="assets/media/liftoff-plate.jpg" alt="" width="720" height="1280" loading="lazy" />
               <img class="lo-fg" src="assets/media/liftoff-wing.webp" alt="" width="720" height="1280" loading="lazy" />
             </div></div>
-            <figcaption><strong>Lift-off parallax</strong>The wing is cut out of a still and drifts towards the camera faster than the sky and hills behind it, so one photo moves like a shot.</figcaption>
+            <figcaption><strong>Lift-off parallax</strong>The subject is cut out of a still and drifts towards the camera faster than the background, so one photo moves like a shot.</figcaption>
           </figure>
           <figure data-reveal style="--d:2">
             <div class="clip"><div class="clip-frame"><img src="assets/media/depth-map.jpg" alt="Depth map of the photo: the plants warm and bright, the wall behind them darker" width="540" height="960" loading="lazy" /></div></div>
@@ -383,50 +366,60 @@
           <div class="sec-num"><b>05</b> What it sees</div>
           <div>
             <h2 id="vision-title" data-split>One frame, <span class="it">four readings.</span></h2>
-            <p class="sec-lead" data-reveal>Small Swift tools run Apple Vision and Core ML on your Mac and hand their results to the editor. Each reading of this GoPro frame from the paramotoring reel is followed by what the editor does with it.</p>
+            <p class="sec-lead" data-reveal>Small Swift tools run Apple Vision and Core ML on your Mac and hand their results to the editor. Each reading of a single frame is followed by what the editor does with it.</p>
           </div>
         </div>
         <div class="vision" data-reveal>
           <!-- Each reading shows what the model measured, then what the editor does with it. -->
           <div class="viewer" id="viewer">
-            <div class="rd on" data-an="input" data-fx="">
-              <img class="an" src="assets/media/vision-input.jpg" alt="Raw GoPro frame: a paramotor pilot in a red suit above a green valley" width="960" height="540" loading="lazy" />
+            <div class="rd on" data-an="input" data-say="frame › 960×540 · loaded" data-fx="">
+              <img class="an" src="assets/media/vision-input.jpg?v=4" alt="Raw GoPro frame: a paramotor pilot in a red suit above a green valley" width="960" height="540" loading="lazy" />
             </div>
-            <div class="rd" data-an="subject" data-fx="title behind the pilot">
+            <div class="rd" data-an="subject" data-say="vision › subject mask · 1 found" data-fx="title behind the subject">
               <div class="an an-subject">
-                <img class="bg" src="assets/media/vision-input.jpg" alt="" width="960" height="540" loading="lazy" />
-                <img class="cut" src="assets/media/vision-cutout.webp" alt="The pilot cut out of the frame, outlined" width="960" height="540" loading="lazy" />
+                <img class="bg" src="assets/media/vision-input.jpg?v=4" alt="" width="960" height="540" loading="lazy" />
+                <img class="cut" src="assets/media/vision-cutout.webp?v=4" alt="The pilot cut out of the frame, outlined" width="960" height="540" loading="lazy" />
               </div>
               <div class="fx fx-title" aria-label="The title PARAMOTORING set behind the pilot">
-                <img class="bg" src="assets/media/vision-input.jpg" alt="" width="960" height="540" loading="lazy" />
-                <span class="ttl" aria-hidden="true"><i style="--i:0">P</i><i style="--i:1">a</i><i style="--i:2">r</i><i style="--i:3">a</i><i style="--i:4">m</i><i style="--i:5">o</i><i style="--i:6">t</i><i style="--i:7">o</i><i style="--i:8">r</i><i style="--i:9">i</i><i style="--i:10">n</i><i style="--i:11">g</i></span>
-                <img class="cut" src="assets/media/vision-cutout.webp" alt="" width="960" height="540" loading="lazy" />
+                <img class="bg" src="assets/media/vision-input.jpg?v=4" alt="" width="960" height="540" loading="lazy" />
+                <span class="shade" aria-hidden="true"></span>
+                <span class="ttl" aria-hidden="true"><span>Paramotoring</span></span>
+                <img class="cut" src="assets/media/vision-cutout.webp?v=4" alt="" width="960" height="540" loading="lazy" />
               </div>
             </div>
-            <div class="rd" data-an="depth" data-fx="3D lift-off move">
+            <div class="rd" data-an="depth" data-say="depth anything v2 › near to far map" data-fx="3D push-in">
               <img class="an" src="assets/media/vision-depth.jpg" alt="Depth map: the pilot bright and warm, the valley dark" width="960" height="540" loading="lazy" />
               <div class="fx fx-depth" aria-label="The pilot lifted off the valley: the camera pushes in and the pilot comes forward faster than the land behind">
                 <div class="stage">
-                  <img class="bg" src="assets/media/vision-input.jpg" alt="" width="960" height="540" loading="lazy" />
-                  <img class="cut" src="assets/media/vision-cutout.webp" alt="" width="960" height="540" loading="lazy" />
+                  <img class="bg" src="assets/media/vision-input.jpg?v=4" alt="" width="960" height="540" loading="lazy" />
+                  <img class="cut" src="assets/media/vision-cutout.webp?v=4" alt="" width="960" height="540" loading="lazy" />
                 </div>
               </div>
             </div>
-            <div class="rd" data-an="attention" data-fx="caption placed in the quiet sky">
+            <div class="rd" data-an="attention" data-say="saliency › attention + face box" data-fx="caption placed in the quiet sky">
               <img class="an" src="assets/media/vision-attention.jpg" alt="Attention heat map centred on the pilot, with the face boxed" width="960" height="540" loading="lazy" />
               <div class="fx fx-place" aria-label="The caption Above the valley placed in the open sky, away from the pilot's face">
-                <img class="bg" src="assets/media/vision-input.jpg" alt="" width="960" height="540" loading="lazy" />
+                <img class="bg" src="assets/media/vision-input.jpg?v=4" alt="" width="960" height="540" loading="lazy" />
                 <span class="face" aria-hidden="true"><i>face · keep clear</i></span>
                 <span class="cap" aria-hidden="true"><b>Above the valley</b><small>Caption goes where nobody is looking</small></span>
               </div>
             </div>
             <span class="scan" aria-hidden="true"></span>
+            <div class="sci" aria-hidden="true">
+              <span class="grid"></span>
+              <i class="br tl"></i><i class="br tr"></i><i class="br bl"></i><i class="br bri"></i>
+              <div class="mk mk-input"><span class="xh"></span><b>Raw frame · 960 × 540</b></div>
+              <div class="mk mk-subject"><span class="box"><i></i><i></i><i></i><i></i></span><b>Subject · locked</b></div>
+              <div class="mk mk-depth"><span class="gauge"><em>Near</em><em>Far</em><span class="tick"></span></span><span class="pin p1"><b>Near</b></span><span class="pin p2"><b>Far</b></span></div>
+              <div class="mk mk-attention"><span class="ret"></span><b>Fixation · face</b></div>
+              <div class="log"><span id="sci-log"></span></div>
+            </div>
             <div class="hud" aria-hidden="true"><span>Apple Vision</span><span id="viewer-tag">A · input</span></div>
           </div>
           <div class="readings" role="tablist" aria-label="Readings of the frame">
             <button class="reading on" type="button" role="tab" aria-selected="true" style="--k:var(--text)"><span class="k">A</span><span><strong>Input</strong><small>The raw frame, before any edit.</small></span><span class="bar"></span></button>
-            <button class="reading" type="button" role="tab" aria-selected="false" style="--k:var(--c-teal)"><span class="k">B</span><span><strong>Subject</strong><small>Cut out, so the title can sit behind the pilot.</small></span><span class="bar"></span></button>
-            <button class="reading" type="button" role="tab" aria-selected="false" style="--k:var(--c-amber)"><span class="k">C</span><span><strong>Depth</strong><small>How far away everything is, for a 3D lift-off move.</small></span><span class="bar"></span></button>
+            <button class="reading" type="button" role="tab" aria-selected="false" style="--k:var(--c-teal)"><span class="k">B</span><span><strong>Subject</strong><small>Cut out, so a title can sit behind the subject.</small></span><span class="bar"></span></button>
+            <button class="reading" type="button" role="tab" aria-selected="false" style="--k:var(--c-amber)"><span class="k">C</span><span><strong>Depth</strong><small>How far away everything is, for a 3D push-in.</small></span><span class="bar"></span></button>
             <button class="reading" type="button" role="tab" aria-selected="false" style="--k:var(--red)"><span class="k">D</span><span><strong>Attention</strong><small>Where the eye goes, so text lands clear of the face.</small></span><span class="bar"></span></button>
           </div>
         </div>
@@ -440,34 +433,22 @@
           <div class="sec-num"><b>06</b> Reels</div>
           <div>
             <h2 id="reels-title" data-split>Same engine, <span class="it">three different looks.</span></h2>
-            <p class="sec-lead" data-reveal>Each place gets its own type and transitions. Tap one to play it; shown without music.</p>
+            <p class="sec-lead" data-reveal>Each place gets its own type and transitions. Tap one to play a silent preview here, or watch it with its music on Instagram.</p>
           </div>
         </div>
         <div class="reels">
           <figure data-reveal style="--d:0">
-            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Chiang Mai Circuit reel"><video src="assets/media/chiang-mai-circuit.mp4" poster="assets/media/chiang-mai-circuit.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="glare"></span><span class="dur">0:21</span><span class="num">01</span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
-            <figcaption><strong>Chiang Mai Circuit</strong>Race lettering, titles set into the track, a whip pan on the beat.</figcaption>
+            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Chiang Mai Circuit reel"><video src="assets/media/chiang-mai-circuit.mp4" data-poster="assets/media/chiang-mai-circuit.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="glare"></span><span class="dur">0:21</span><span class="num">01</span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
+            <figcaption><strong>Chiang Mai Circuit</strong>Race lettering, titles set into the track, a whip pan on the beat.<a class="ig" href="https://www.instagram.com/p/DebBSQ_PpcA/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>Watch with sound on Instagram</a></figcaption>
           </figure>
           <figure data-reveal style="--d:1">
-            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Artistic Village reel"><video src="assets/media/artistic-village.mp4" poster="assets/media/artistic-village.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="glare"></span><span class="dur">0:24</span><span class="num">02</span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
-            <figcaption><strong>Artistic Village</strong>A handwritten title and a sketch that paints itself into the next shot.</figcaption>
+            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Artistic Village reel"><video src="assets/media/artistic-village.mp4" data-poster="assets/media/artistic-village.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="glare"></span><span class="dur">0:24</span><span class="num">02</span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
+            <figcaption><strong>Artistic Village</strong>A handwritten title and a sketch that paints itself into the next shot.<a class="ig" href="https://www.instagram.com/p/DedtKM8PO8W/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>Watch with sound on Instagram</a></figcaption>
           </figure>
           <figure data-reveal style="--d:2">
-            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Paramotoring reel"><video src="assets/media/paramotoring.mp4" poster="assets/media/paramotoring.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="glare"></span><span class="dur">0:31</span><span class="num">03</span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
-            <figcaption><strong>Paramotoring</strong>Wide GoPro footage reframed into distinct angles; lift-off lands on the drop.</figcaption>
+            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Paramotoring reel"><video src="assets/media/paramotoring.mp4" data-poster="assets/media/paramotoring.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="glare"></span><span class="dur">0:31</span><span class="num">03</span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
+            <figcaption><strong>Paramotoring</strong>Wide GoPro footage reframed into distinct angles; lift-off lands on the drop.<a class="ig" href="https://www.instagram.com/p/DelD2fCvDuh/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>Watch with sound on Instagram</a></figcaption>
           </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Numbers -->
-    <section aria-label="Jauntcut in numbers">
-      <div class="wrap">
-        <div class="stats">
-          <div data-reveal style="--d:0"><span class="n" data-count="11">11</span><span class="label">Title styles</span></div>
-          <div data-reveal style="--d:1"><span class="n" data-count="15">15</span><span class="label">Transitions besides the cut</span></div>
-          <div data-reveal style="--d:2"><span class="n" data-count="60">60</span><span class="label">Frames a second</span></div>
-          <div data-reveal style="--d:3"><span class="n" data-count="0">0</span><span class="label">Files uploaded anywhere</span></div>
         </div>
       </div>
     </section>
@@ -554,6 +535,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=9" defer></script>
+  <script src="assets/js/site.js?v=11" defer></script>
 </body>
 </html>

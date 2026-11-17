@@ -65,6 +65,16 @@
   });
   function select(node) { var r = document.createRange(); r.selectNodeContents(node); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
 
+  // ---------- Posters below the hero load as they come near, so the first screen fetches only what it shows ----------
+  var lazyPosters = $$('video[data-poster]');
+  var setPoster = function (v) { v.poster = v.dataset.poster; v.removeAttribute('data-poster'); };
+  if ('IntersectionObserver' in window) {
+    var pio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { setPoster(e.target); pio.unobserve(e.target); } });
+    }, { rootMargin: '900px 0px' });
+    lazyPosters.forEach(function (v) { pio.observe(v); });
+  } else lazyPosters.forEach(setPoster);
+
   // ---------- Clips play only while on screen (muted). Reduced motion: posters only. ----------
   var reel = $('#hero-reel');
   if (!calm && 'IntersectionObserver' in window) {
@@ -193,11 +203,11 @@
   else { pins.forEach(function (p) { setStack(p, 0); }); steps.forEach(function (s) { s.classList.add('lit'); }); if (pipe) pipe.style.setProperty('--p', 1); }
 
   // ---------- Vision readings ----------
-  var viewer = $('#viewer'), readings = $$('.reading'), vtag = $('#viewer-tag');
+  var viewer = $('#viewer'), readings = $$('.reading'), vtag = $('#viewer-tag'), slog = $('#sci-log');
   if (viewer && readings.length) {
     // Each reading: the measurement for ANALYSE ms, then the effect it enables wipes in; next after DWELL.
     var rds = $$('.rd', viewer), cur = 0, timer = null, fxTimer = null, visible = false, picked = false;
-    var ANALYSE = 2400, DWELL = 7600;
+    var ANALYSE = 1800, DWELL = 6500;
     viewer.parentNode.style.setProperty('--dur', DWELL + 'ms');
     var tag = function (i, fx) {
       if (!vtag) return;
@@ -213,11 +223,14 @@
         if (j === i) { void r.offsetWidth; r.classList.add('on'); }
       });
       tag(i, false);
+      viewer.dataset.k = rds[i].dataset.an;
+      if (slog) { slog.textContent = rds[i].dataset.say || ''; slog.style.setProperty('--n', slog.textContent.length); }
+      viewer.classList.remove('analysing'); void viewer.offsetWidth; viewer.classList.add('analysing');
       var hasFx = !!rds[i].dataset.fx, dwell = hasFx ? DWELL : 3000;
       viewer.parentNode.style.setProperty('--dur', (picked ? 1 : dwell) + 'ms');
-      if (calm) { if (hasFx) { rds[i].classList.add('fx-on'); tag(i, true); } return; }
+      if (calm) { if (hasFx) { rds[i].classList.add('fx-on'); viewer.classList.remove('analysing'); tag(i, true); } return; }
       viewer.classList.remove('scanning'); void viewer.offsetWidth; viewer.classList.add('scanning');
-      if (hasFx) fxTimer = setTimeout(function () { rds[i].classList.add('fx-on'); tag(i, true); }, ANALYSE);
+      if (hasFx) fxTimer = setTimeout(function () { rds[i].classList.add('fx-on'); viewer.classList.remove('analysing'); tag(i, true); }, ANALYSE);
       if (!picked && visible) timer = setTimeout(function () { show((cur + 1) % rds.length); }, dwell);
     };
     // A click stops the auto-cycle and holds that reading with its bar full.
