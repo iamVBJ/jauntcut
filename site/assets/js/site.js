@@ -266,21 +266,13 @@
     });
   });
 
-  // ---------- Spotlight cards and magnetic buttons ----------
+  // ---------- Spotlight cards ----------
   if (!calm) {
     $$('.card').forEach(function (c) {
       c.addEventListener('pointermove', function (e) {
         var r = c.getBoundingClientRect();
         c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
       });
-    });
-    $$('[data-magnet]').forEach(function (b) {
-      b.addEventListener('pointermove', function (e) {
-        if (e.pointerType !== 'mouse') return;
-        var r = b.getBoundingClientRect();
-        b.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * .18).toFixed(1) + 'px,' + ((e.clientY - r.top - r.height / 2) * .3).toFixed(1) + 'px)';
-      });
-      b.addEventListener('pointerleave', function () { b.style.transform = ''; });
     });
   }
 
