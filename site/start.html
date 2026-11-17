@@ -12,33 +12,34 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://jauntcut.com/start" />
   <meta property="og:image" content="https://jauntcut.com/assets/media/vision-subject.jpg" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
-  <link rel="stylesheet" href="assets/css/site.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="assets/css/site.css?v=8" />
 </head>
 <body>
 
   <header class="nav">
     <div class="wrap">
-      <a class="brand" href="./" aria-label="Jauntcut home">
-        <img class="brand-mark" src="favicon.svg" alt="" width="26" height="26" />
-        Jauntcut
+      <a class="brand" href="/" aria-label="Jauntcut home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-word">Jauntcut</span>
+        <span class="brand-tag">reel engine · v0.1</span>
       </a>
       <ul class="nav-links">
-        <li><a href="./#how">How it works</a></li>
-        <li><a href="./#vision">Vision</a></li>
-        <li><a href="./#gates">Quality gates</a></li>
-        <li class="keep"><a href="https://github.com/iamVBJ/jauntcut">GitHub</a></li>
+        <li><a href="/#what">What it is</a></li>
+        <li><a href="/#how">How</a></li>
+        <li><a href="/#scene">Effects</a></li>
+        <li class="keep"><a href="https://github.com/iamVBJ/jauntcut">Source</a></li>
       </ul>
     </div>
   </header>
 
   <main class="docs">
     <div class="wrap narrow">
-      <p class="kicker">Get started</p>
-      <h1>Install Jauntcut and make your first reel.</h1>
+      <span class="label"><b>●</b> Install guide</span>
+      <h1>Install Jauntcut, <span class="it">make your first reel.</span></h1>
       <p>Jauntcut runs from Terminal today: you put footage in a folder, describe the edit in a
       small file, and render. Installing takes a few minutes, longer on a Mac that doesn't have
       Apple's developer tools yet. A Mac app that needs no Terminal is next on the
@@ -65,10 +66,10 @@
 
       <h2 id="install">Install</h2>
       <p>Open Terminal (in Applications → Utilities), paste this and press Return:</p>
-      <div class="install">
+      <div class="term"><div class="install">
         <code>curl -fsSL https://jauntcut.com/install.sh | bash</code>
         <button class="copy" type="button">Copy</button>
-      </div>
+      </div></div>
       <p>It installs into <code>~/jauntcut</code>. In order, it:</p>
       <ol>
         <li>Checks your Mac and Apple's command-line tools. If those are missing, macOS shows an install window; let it finish, then run the command again.</li>
@@ -180,15 +181,16 @@ npm run new night-market</code></pre>
 
   <footer class="footer">
     <div class="wrap">
-      <span>Jauntcut is free and open source (MIT). Built by <a href="https://vaibhav.cc/">Vaibhav Jadhav</a>.</span>
+      <span class="big">Jauntcut</span>
       <nav aria-label="Footer">
-        <a href="./">Home</a>
-        <a href="https://github.com/iamVBJ/jauntcut">GitHub</a>
+        <a href="/">Home</a>
+        <a href="https://github.com/iamVBJ/jauntcut">Source on GitHub</a>
         <a href="https://github.com/iamVBJ/jauntcut/issues">Report an issue</a>
+        <a href="https://vaibhav.cc/">Built by Vaibhav Jadhav</a>
       </nav>
     </div>
   </footer>
 
-  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/site.js?v=4" defer></script>
 </body>
 </html>
