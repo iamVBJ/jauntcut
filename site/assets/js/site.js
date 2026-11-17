@@ -197,7 +197,7 @@
   if (viewer && readings.length) {
     // Each reading: the measurement for ANALYSE ms, then the effect it enables wipes in; next after DWELL.
     var rds = $$('.rd', viewer), cur = 0, timer = null, fxTimer = null, visible = false, picked = false;
-    var ANALYSE = 1300, DWELL = 3400;
+    var ANALYSE = 2400, DWELL = 7600;
     viewer.parentNode.style.setProperty('--dur', DWELL + 'ms');
     var tag = function (i, fx) {
       if (!vtag) return;
@@ -213,7 +213,7 @@
         if (j === i) { void r.offsetWidth; r.classList.add('on'); }
       });
       tag(i, false);
-      var hasFx = !!rds[i].dataset.fx, dwell = hasFx ? DWELL : 2000;
+      var hasFx = !!rds[i].dataset.fx, dwell = hasFx ? DWELL : 3000;
       viewer.parentNode.style.setProperty('--dur', (picked ? 1 : dwell) + 'ms');
       if (calm) { if (hasFx) { rds[i].classList.add('fx-on'); tag(i, true); } return; }
       viewer.classList.remove('scanning'); void viewer.offsetWidth; viewer.classList.add('scanning');
