@@ -70,6 +70,7 @@ code, .mono { font-family: var(--mono); }
 .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; }
 .nav-links a { text-decoration: none; color: var(--text-2); position: relative; transition: color .2s; }
 .nav-links a.btn { color: #fff; }
+.nav-links a.btn-rec { color: var(--on-accent); }
 .nav-links .gh { display: inline-flex; align-items: center; gap: 8px; }
 .gh-ico { width: 15px; height: 15px; flex: none; }
 .nav-links a:not(.btn)::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: right; transition: transform .35s var(--ease); }
