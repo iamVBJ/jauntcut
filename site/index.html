@@ -6,7 +6,7 @@
   <title>Jauntcut · Drop in a trip, get back a reel</title>
   <meta name="description" content="Jauntcut edits travel reels for you on your Mac. Give it the photos and clips from a day out and a song: it cuts them to the beat, sets titles into the scene, checks the edit and renders a finished vertical reel. Free and open source." />
   <link rel="canonical" href="https://jauntcut.com/" />
-  <meta name="theme-color" content="#efe9df" />
+  <meta name="theme-color" content="#08080a" />
   <meta property="og:title" content="Jauntcut · Drop in a trip, get back a reel" />
   <meta property="og:description" content="A free Mac tool that turns a day's phone and GoPro footage into a finished, beat-cut travel reel. On-device vision, edits as code, quality checks on every render." />
   <meta property="og:type" content="website" />
@@ -16,8 +16,8 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="assets/css/site.css?v=8" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=JetBrains+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="assets/css/site.css?v=13" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,9 +38,9 @@
   <header class="nav">
     <div class="wrap">
       <a class="brand" href="./" aria-label="Jauntcut home">
-        <span class="brand-dot" aria-hidden="true"></span>
+        <svg class="brand-mark" viewBox="0 0 26 26" aria-hidden="true"><rect width="26" height="26" rx="7" fill="#ff3d2e"/><path d="M9 7.5v11l9.5-5.5z" fill="#fff"/><path d="M6 20.5 20.5 5.5" stroke="#ff3d2e" stroke-width="2.6"/></svg>
         <span class="brand-word">Jauntcut</span>
-        <span class="brand-tag">reel engine · v0.1</span>
+        <span class="brand-tag">v0.1</span>
       </a>
       <ul class="nav-links">
         <li><a href="#what">What it is</a></li>
@@ -48,88 +48,127 @@
         <li><a href="#scene">Effects</a></li>
         <li><a href="#reels">Reels</a></li>
         <li><a href="https://github.com/iamVBJ/jauntcut">Source</a></li>
-        <li class="keep"><a class="btn btn-ink" href="start">Install</a></li>
+        <li class="keep"><a class="btn btn-rec" href="start">Install</a></li>
       </ul>
     </div>
   </header>
 
   <main>
-    <!-- HERO: what goes in, what comes out -->
+    <!-- HERO -->
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="glow"></div>
+        <div class="grid"></div>
+        <div class="strip strip-a">
+          <img src="assets/media/raw/raw1.jpg" alt="" /><img src="assets/media/raw/raw2.jpg" alt="" /><img src="assets/media/raw/raw3.jpg" alt="" /><img src="assets/media/raw/raw4.jpg" alt="" /><img src="assets/media/raw/raw5.jpg" alt="" /><img src="assets/media/raw/raw6.jpg" alt="" /><img src="assets/media/raw/raw7.jpg" alt="" /><img src="assets/media/raw/raw8.jpg" alt="" /><img src="assets/media/raw/raw1.jpg" alt="" /><img src="assets/media/raw/raw2.jpg" alt="" /><img src="assets/media/raw/raw3.jpg" alt="" /><img src="assets/media/raw/raw4.jpg" alt="" /><img src="assets/media/raw/raw5.jpg" alt="" /><img src="assets/media/raw/raw6.jpg" alt="" /><img src="assets/media/raw/raw7.jpg" alt="" /><img src="assets/media/raw/raw8.jpg" alt="" />
+        </div>
+        <div class="strip strip-b">
+          <img src="assets/media/raw/raw5.jpg" alt="" /><img src="assets/media/raw/raw8.jpg" alt="" /><img src="assets/media/raw/raw2.jpg" alt="" /><img src="assets/media/raw/raw7.jpg" alt="" /><img src="assets/media/raw/raw1.jpg" alt="" /><img src="assets/media/raw/raw4.jpg" alt="" /><img src="assets/media/raw/raw6.jpg" alt="" /><img src="assets/media/raw/raw3.jpg" alt="" /><img src="assets/media/raw/raw5.jpg" alt="" /><img src="assets/media/raw/raw8.jpg" alt="" /><img src="assets/media/raw/raw2.jpg" alt="" /><img src="assets/media/raw/raw7.jpg" alt="" /><img src="assets/media/raw/raw1.jpg" alt="" /><img src="assets/media/raw/raw4.jpg" alt="" /><img src="assets/media/raw/raw6.jpg" alt="" /><img src="assets/media/raw/raw3.jpg" alt="" />
+        </div>
+        <div class="fade"></div>
+      </div>
+
       <div class="wrap">
         <div class="hero-top">
           <div>
             <div class="slate">
-              <span class="label"><b>●</b> Free &amp; open source</span>
-              <span class="label">macOS 14+</span>
-              <span class="label">Runs on your Mac</span>
+              <span class="chip"><span class="dot"></span>Free &amp; open source</span>
+              <span class="chip">macOS 14+</span>
+              <span class="chip">Runs on your Mac</span>
             </div>
-            <h1 id="hero-title">Drop in a trip.<br /><span class="it">Get back a reel.</span></h1>
+            <h1 id="hero-title">
+              <span class="ln"><span style="--i:0">Drop in a trip.</span></span>
+              <span class="ln"><span class="it" style="--i:1">Get back</span></span>
+              <span class="ln"><span class="it" style="--i:2">a reel.</span></span>
+            </h1>
             <p class="hero-lead">
               Jauntcut edits travel videos on your Mac. Give it the <strong>photos and clips from a day out</strong>
               and a song, list the moments you want, and it does the rest: lands every cut on the beat, sets
-              titles <em>into</em> the scene, checks the edit like a fussy editor, and renders a
+              titles <strong>into</strong> the scene, checks the edit like a fussy editor, and renders a
               <strong>finished vertical reel</strong>. Your footage never leaves your Mac.
             </p>
             <div class="hero-ctas">
-              <a class="btn btn-ink" href="start">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M12 3v13M6 11l6 6 6-6M4 21h16"/></svg>
+              <a class="btn btn-rec" href="start" data-magnet>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v13M6 11l6 6 6-6M4 21h16"/></svg>
                 Install on Mac
               </a>
-              <a class="btn" href="#what">What does it do?</a>
+              <a class="btn" href="#edit" data-magnet>See the real edit ↓</a>
             </div>
           </div>
           <div class="monitor">
-            <div class="monitor-frame marks">
+            <div class="mon-head"><span><b>PGM</b> · Program</span><span class="tc" id="hero-tc">00:00:00</span></div>
+            <div class="mon-frame">
               <video id="hero-reel" src="assets/media/chiang-mai-circuit.mp4" poster="assets/media/chiang-mai-circuit.jpg" muted loop playsinline preload="auto" width="720" height="1280" data-autoplay></video>
+              <span class="safe" aria-hidden="true"></span>
+              <span class="cross" aria-hidden="true"></span>
+              <span class="badge">LIVE OUTPUT</span>
             </div>
-            <div class="monitor-cap">
-              <span class="label rec">Output</span>
-              <span class="label tc" id="hero-tc">00:00:00</span>
+            <div class="mon-foot">
+              <span>1080×1920 · 60p</span>
+              <span class="meters" id="meters" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="edit" aria-label="The edit behind this reel">
+      <!-- The edit behind the reel, as an editor's timeline -->
+      <div class="nle" id="edit" aria-label="The edit behind this reel">
         <div class="wrap">
-          <div class="edit-head">
-            <span class="label"><b>Reel 01</b> · Chiang Mai Circuit · the real edit</span>
-            <span class="label">8 files in → 21.1 s out · 128 BPM</span>
-          </div>
-          <div class="edit-body">
-            <div class="bin">
-              <span class="label">Input · what you drop in</span>
-              <div class="bin-grid">
-                <div class="file"><img src="assets/media/raw/raw4.jpg" alt="" width="135" height="240" loading="lazy" /><span>IMG_2595.MOV · 5.1s</span></div>
-                <div class="file"><img src="assets/media/raw/raw3.jpg" alt="" width="135" height="240" loading="lazy" /><span>FF2905C1.jpg · photo</span></div>
-                <div class="file"><img src="assets/media/raw/raw2.jpg" alt="" width="135" height="240" loading="lazy" /><span>FA7B11C8.jpg · photo</span></div>
-                <div class="file"><img src="assets/media/raw/raw7.jpg" alt="" width="135" height="240" loading="lazy" /><span>IMG_2618.MOV · 9.6s</span></div>
-                <div class="file"><img src="assets/media/raw/raw6.jpg" alt="" width="135" height="240" loading="lazy" /><span>IMG_2616.MOV · 3.4s</span></div>
-                <div class="file"><img src="assets/media/raw/raw1.jpg" alt="" width="135" height="240" loading="lazy" /><span>GoPro.MP4 · 11.8s</span></div>
-                <div class="file"><img src="assets/media/raw/raw5.jpg" alt="" width="135" height="240" loading="lazy" /><span>IMG_2601.HEIC · photo</span></div>
-                <div class="file unused"><img src="assets/media/raw/raw8.jpg" alt="" width="135" height="240" loading="lazy" /><span>IMG_2620.MOV · 10.2s</span></div>
-              </div>
+          <div class="panel" data-reveal>
+            <div class="panel-bar">
+              <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="tabs"><span>Media</span><span class="on">Timeline · Chiang Mai Circuit</span><span>Inspector</span></span>
+              <span class="bpm"><span class="pulse" id="pulse"></span>128 BPM · beat <span class="tc" id="beat">01</span></span>
             </div>
-            <div class="timeline">
-              <span class="label">Edit · cut to the beat</span>
-              <div class="ruler" aria-hidden="true">
-                <span style="left:0%">0s</span><span style="left:23.7%">5s</span><span style="left:47.4%">10s</span><span style="left:71.1%">15s</span><span style="left:94.8%">20s</span>
+            <div class="panel-body">
+              <div class="bin">
+                <span class="label">Media pool · what you drop in</span>
+                <div class="bin-grid">
+                  <div class="file"><img src="assets/media/raw/raw4.jpg" alt="" width="135" height="240" loading="lazy" /><span>IMG_2595.MOV</span></div>
+                  <div class="file"><img src="assets/media/raw/raw3.jpg" alt="" width="135" height="240" loading="lazy" /><span>FF2905C1.jpg</span></div>
+                  <div class="file"><img src="assets/media/raw/raw2.jpg" alt="" width="135" height="240" loading="lazy" /><span>FA7B11C8.jpg</span></div>
+                  <div class="file"><img src="assets/media/raw/raw7.jpg" alt="" width="135" height="240" loading="lazy" /><span>IMG_2618.MOV</span></div>
+                  <div class="file"><img src="assets/media/raw/raw6.jpg" alt="" width="135" height="240" loading="lazy" /><span>IMG_2616.MOV</span></div>
+                  <div class="file"><img src="assets/media/raw/raw1.jpg" alt="" width="135" height="240" loading="lazy" /><span>GoPro.MP4</span></div>
+                  <div class="file"><img src="assets/media/raw/raw5.jpg" alt="" width="135" height="240" loading="lazy" /><span>IMG_2601.HEIC</span></div>
+                  <div class="file unused"><img src="assets/media/raw/raw8.jpg" alt="" width="135" height="240" loading="lazy" /><span>IMG_2620.MOV</span></div>
+                </div>
+                <div class="bin-meta label">8 files in → 21.1 s out</div>
               </div>
-              <div class="track" id="track">
-                <div class="playhead" id="playhead" aria-hidden="true"></div>
-                <div class="seg" data-from="0" data-to="4.68" style="width:calc(22.18% - 2px)"><img src="assets/media/raw/raw4.jpg" alt="" /><i>01</i></div>
-                <div class="seg fx" data-fx="parallax" data-from="4.68" data-to="6.10" style="width:calc(6.73% - 2px)"><img src="assets/media/raw/raw3.jpg" alt="" /><i>02</i></div>
-                <div class="seg fx" data-fx="parallax" data-from="6.10" data-to="7.50" style="width:calc(6.64% - 2px)"><img src="assets/media/raw/raw2.jpg" alt="" /><i>03</i></div>
-                <div class="seg fx" data-fx="title in scene" data-from="7.50" data-to="10.32" style="width:calc(13.36% - 2px)"><img src="assets/media/raw/raw7.jpg" alt="" /><i>04</i></div>
-                <div class="seg fx" data-fx="kart erases" data-from="10.32" data-to="12.18" style="width:calc(8.82% - 2px)"><img src="assets/media/raw/raw6.jpg" alt="" /><i>05</i></div>
-                <div class="seg" data-from="12.18" data-to="14.53" style="width:calc(11.14% - 2px)"><img src="assets/media/raw/raw1.jpg" alt="" /><i>06</i></div>
-                <div class="seg fx" data-fx="whip" data-from="14.53" data-to="17.35" style="width:calc(13.36% - 2px)"><img src="assets/media/raw/raw1.jpg" alt="" /><i>07</i></div>
-                <div class="seg fx" data-fx="title behind" data-from="17.35" data-to="21.10" style="width:calc(17.77% - 2px)"><img src="assets/media/raw/raw5.jpg" alt="" /><i>08</i></div>
-              </div>
-              <div class="track-meta">
-                <span class="label">8 shots · 1 file left out · every cut on a beat</span>
-                <span class="label">Output · 1080×1920 · 60 fps</span>
+              <div class="timeline">
+                <div class="tl-grid">
+                  <span class="hd">TC</span>
+                  <div class="ruler" aria-hidden="true">
+                    <span style="left:0%">00:00</span><span style="left:23.7%">00:05</span><span style="left:47.4%">00:10</span><span style="left:71.1%">00:15</span><span style="left:94.8%">00:20</span>
+                  </div>
+                  <span class="hd">FX</span>
+                  <div class="fxlane" aria-hidden="true">
+                    <b style="left:22.18%;width:calc(13.37% - 2px);background:var(--c-violet)">parallax</b>
+                    <b style="left:35.55%;width:calc(13.36% - 2px);background:var(--c-amber)">title in scene</b>
+                    <b style="left:48.91%;width:calc(8.82% - 2px);background:var(--c-pink)">kart erases</b>
+                    <b style="left:68.87%;width:calc(13.36% - 2px);background:var(--c-teal)">whip</b>
+                    <b style="left:82.23%;width:calc(17.77% - 2px);background:var(--c-amber)">title behind</b>
+                  </div>
+                  <span class="hd">V1</span>
+                  <div class="track" id="track">
+                    <div class="seg" data-from="0" data-to="4.68" style="width:calc(22.18% - 2px)"><img src="assets/media/raw/raw4.jpg" alt="" /><i>01</i></div>
+                    <div class="seg" data-from="4.68" data-to="6.10" style="width:calc(6.73% - 2px);--clip:var(--c-violet)"><img src="assets/media/raw/raw3.jpg" alt="" /><i>02</i></div>
+                    <div class="seg" data-from="6.10" data-to="7.50" style="width:calc(6.64% - 2px);--clip:var(--c-violet)"><img src="assets/media/raw/raw2.jpg" alt="" /><i>03</i></div>
+                    <div class="seg" data-from="7.50" data-to="10.32" style="width:calc(13.36% - 2px);--clip:var(--c-amber)"><img src="assets/media/raw/raw7.jpg" alt="" /><i>04</i></div>
+                    <div class="seg" data-from="10.32" data-to="12.18" style="width:calc(8.82% - 2px);--clip:var(--c-pink)"><img src="assets/media/raw/raw6.jpg" alt="" /><i>05</i></div>
+                    <div class="seg" data-from="12.18" data-to="14.53" style="width:calc(11.14% - 2px)"><img src="assets/media/raw/raw1.jpg" alt="" /><i>06</i></div>
+                    <div class="seg" data-from="14.53" data-to="17.35" style="width:calc(13.36% - 2px);--clip:var(--c-teal)"><img src="assets/media/raw/raw1.jpg" alt="" /><i>07</i></div>
+                    <div class="seg" data-from="17.35" data-to="21.10" style="width:calc(17.77% - 2px);--clip:var(--c-amber)"><img src="assets/media/raw/raw5.jpg" alt="" /><i>08</i></div>
+                    <div class="beats" id="beats" aria-hidden="true"></div>
+                  </div>
+                  <span class="hd">A1</span>
+                  <div class="wave" id="wave" aria-hidden="true"></div>
+                  <div class="playhead" id="playhead" aria-hidden="true"></div>
+                </div>
+                <div class="tl-meta">
+                  <span class="label"><b>●</b> 8 shots · 1 file left out · every cut on a beat</span>
+                  <span class="label">Click a shot to jump there</span>
+                </div>
               </div>
             </div>
           </div>
@@ -137,23 +176,39 @@
       </div>
     </section>
 
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-row">
+        <span>Beat-cut</span><span>11 title styles</span><span>15 transitions</span><span>1080×1920 · 60 fps</span><span>On-device vision</span><span>Edits as code</span><span>No upload</span><span>No watermark</span>
+        <span>Beat-cut</span><span>11 title styles</span><span>15 transitions</span><span>1080×1920 · 60 fps</span><span>On-device vision</span><span>Edits as code</span><span>No upload</span><span>No watermark</span>
+      </div>
+    </div>
+
     <!-- 01 WHAT -->
     <section class="sec" id="what" aria-labelledby="what-title">
       <div class="wrap">
         <div class="sec-head">
-          <div class="sec-num"><b>01</b> / What it is</div>
+          <div class="sec-num"><b>01</b> What it is</div>
           <div>
-            <h2 id="what-title">An editor that sits on your Mac, <span class="it">not a template.</span></h2>
-            <p class="sec-lead">Most reel apps paste your clips into the same template everyone uses. Jauntcut measures your footage first, then shapes the edit around it: where text can go, what can move in 3D, which shot runs too long.</p>
+            <h2 id="what-title" data-split>An editor on your Mac, <span class="it">not a template.</span></h2>
+            <p class="sec-lead" data-reveal>Most reel apps paste your clips into the same template everyone uses. Jauntcut measures your footage first, then shapes the edit around it: where text can go, what can move in 3D, which shot runs too long.</p>
           </div>
         </div>
         <div class="what">
-          <div><div class="big">Cuts</div><h3>Times every cut to the beat</h3><p>You say which clips and how many beats each; it finds the song's tempo, lands every cut on a beat, and flags a slow opening, a shot held too long or the same scene twice.</p></div>
-          <div><div class="big">Sees</div><h3>Understands every frame</h3><p>Cuts people and karts out of the background, measures depth, finds where the eye goes and where the faces are, all with Apple's on-device vision models.</p></div>
-          <div><div class="big">Checks</div><h3>Refuses a bad edit</h3><p>Before anything renders, it checks length, pacing, text over faces, colour jumps and exposure, and tells you exactly which clip to fix.</p></div>
+          <div class="card" data-reveal style="--d:0;--k:var(--c-teal)">
+            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 24h4M12 16v16M18 10v28M24 18v12M30 6v36M36 14v20M42 22v4"/></svg>
+            <div class="big">Cuts</div><h3>Times every cut to the beat</h3><p>You say which clips and how many beats each; it finds the song's tempo, lands every cut on a beat, and flags a slow opening, a shot held too long or the same scene twice.</p>
+          </div>
+          <div class="card" data-reveal style="--d:1;--k:var(--c-violet)">
+            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 14V4h10M34 4h10v10M44 34v10H34M14 44H4V34"/><circle cx="24" cy="24" r="8"/><circle cx="24" cy="24" r="2" fill="currentColor"/></svg>
+            <div class="big">Sees</div><h3>Understands every frame</h3><p>Cuts people and karts out of the background, measures depth, finds where the eye goes and where the faces are, all with Apple's on-device vision models.</p>
+          </div>
+          <div class="card" data-reveal style="--d:2;--k:var(--red)">
+            <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="5" y="5" width="38" height="38" rx="8"/><path d="m15 25 6 6 12-14"/></svg>
+            <div class="big">Checks</div><h3>Refuses a bad edit</h3><p>Before anything renders, it checks length, pacing, text over faces, colour jumps and exposure, and tells you exactly which clip to fix.</p>
+          </div>
         </div>
         <div class="plain">
-          <div>
+          <div data-reveal>
             <h3>Who it's for</h3>
             <ul>
               <li>People who film trips on a phone or GoPro and want a reel that looks hand-cut.</li>
@@ -161,7 +216,7 @@
               <li>Developers who like their edits as code: diffable, repeatable, reviewable.</li>
             </ul>
           </div>
-          <div>
+          <div data-reveal style="--d:1">
             <h3>What you get</h3>
             <ul>
               <li>A vertical 1080×1920, 60 fps reel, 20 to 45 seconds long.</li>
@@ -177,39 +232,39 @@
     <section class="sec" id="how" aria-labelledby="how-title" style="padding-top:0">
       <div class="wrap">
         <div class="sec-head">
-          <div class="sec-num"><b>02</b> / How it works</div>
+          <div class="sec-num"><b>02</b> How it works</div>
           <div>
-            <h2 id="how-title">Four steps from <span class="it">camera roll</span> to reel.</h2>
+            <h2 id="how-title" data-split>Four steps from <span class="it">camera roll</span> to reel.</h2>
           </div>
         </div>
-        <div class="steps4">
-          <div class="step">
-            <span class="step-n">STEP 01</span>
+        <div class="pipeline" id="pipeline">
+          <div class="step" data-reveal style="--d:0;--k:var(--c-teal)">
+            <span class="step-n">01</span>
             <h3>Collect</h3>
             <p>Drop the day's photos and clips in a folder. Jauntcut sorts them by place and time from their GPS.</p>
             <div class="step-vis mini-bin" aria-hidden="true">
               <img src="assets/media/raw/raw4.jpg" alt="" loading="lazy" /><img src="assets/media/raw/raw7.jpg" alt="" loading="lazy" /><img src="assets/media/raw/raw3.jpg" alt="" loading="lazy" /><img src="assets/media/raw/raw1.jpg" alt="" loading="lazy" />
             </div>
           </div>
-          <div class="step">
-            <span class="step-n">STEP 02</span>
+          <div class="step" data-reveal style="--d:1;--k:var(--c-violet)">
+            <span class="step-n">02</span>
             <h3>Understand</h3>
             <p>On-device models map subjects, depth, attention and faces in every frame; beat analysis maps the song.</p>
             <div class="step-vis mini-vis" aria-hidden="true">
               <img src="assets/media/vision-frame.jpg" alt="" loading="lazy" /><img src="assets/media/vision-subject.jpg" alt="" loading="lazy" /><img src="assets/media/vision-depth.jpg" alt="" loading="lazy" /><img src="assets/media/vision-saliency.jpg" alt="" loading="lazy" />
             </div>
           </div>
-          <div class="step">
-            <span class="step-n">STEP 03</span>
+          <div class="step" data-reveal style="--d:2;--k:var(--c-amber)">
+            <span class="step-n">03</span>
             <h3>Edit</h3>
             <p>You write the edit as one small file: which clips, how many beats, which effects. Preview it live in the browser.</p>
             <div class="step-vis mini-code" aria-hidden="true"><span class="c">// the drop, half speed</span>
 { src: <span class="s">"IMG_2618.mov"</span>,
-  beats: 6, startAt: 1.6,
+  beats: <span class="k">6</span>, startAt: <span class="k">1.6</span>,
   scene: { text: <span class="s">"CHIANG MAI"</span> } }</div>
           </div>
-          <div class="step">
-            <span class="step-n">STEP 04</span>
+          <div class="step" data-reveal style="--d:3;--k:var(--red)">
+            <span class="step-n">04</span>
             <h3>Check &amp; render</h3>
             <p>Every rule runs before a single frame renders. Pass, and you get the finished reel and an upload copy.</p>
             <ul class="step-vis mini-checks" aria-hidden="true">
@@ -223,84 +278,91 @@
       </div>
     </section>
 
-    <!-- 03 SCENE TEXT (circuit) -->
-    <section class="sec bay" id="scene" aria-labelledby="scene-title">
-      <div class="wrap">
-        <div class="sec-head">
-          <div class="sec-num"><b>03</b> / Titles in the scene</div>
-          <div>
-            <h2 id="scene-title">The title sits on the tarmac. <span class="it">The karts drive over it.</span></h2>
-            <p class="sec-lead">Pull one frame of the Chiang Mai Circuit reel apart. These are the real layers from the render: scroll, and they separate.</p>
-          </div>
-        </div>
-        <div class="showcase">
-          <div class="stage" id="stage-circuit">
-            <div class="stack" data-stack>
-              <div class="layer base" style="--z:0"><img src="assets/media/circuit-plate.jpg" alt="Raw footage: the kart track with a kart passing" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>01</b> footage</span></div>
-              <div class="layer" style="--z:150"><img src="assets/media/circuit-title.png" alt="The title CHIANG MAI on its own, tracked to the road" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>02</b> title, tracked to the road</span></div>
-              <div class="layer" style="--z:300"><img src="assets/media/circuit-kart.png" alt="The kart cut out of the frame" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>03</b> kart, cut out per frame</span></div>
+    <!-- 03 SCENE TEXT (circuit), pinned while the layers separate -->
+    <section class="pin" id="scene" aria-labelledby="scene-title" data-pin>
+      <div class="pin-inner">
+        <div class="wrap">
+          <div class="sec-head">
+            <div class="sec-num"><b>03</b> Titles in the scene</div>
+            <div>
+              <h2 id="scene-title" data-split>The title sits on the tarmac. <span class="it">The karts drive over it.</span></h2>
             </div>
-            <div class="stage-ctl"><button class="toggle" type="button" aria-pressed="false" data-toggle="stage-circuit">Separate layers</button><span class="label">Frame 00:08:12</span></div>
           </div>
-          <div class="side">
-            <div class="clip">
-              <div class="clip-frame marks"><video src="assets/media/circuit-scene.mp4" poster="assets/media/circuit-final.jpg" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div>
-              <div class="clip-cap"><span class="label">Result</span><span class="label">00:07:30 – 00:12:11</span></div>
+          <div class="showcase">
+            <div class="stage" id="stage-circuit">
+              <div class="stack" data-stack>
+                <div class="layer base" style="--z:0"><img src="assets/media/circuit-plate.jpg" alt="Raw footage: the kart track with a kart passing" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>01</b> footage</span></div>
+                <div class="layer" style="--z:160"><img src="assets/media/circuit-title.png" alt="The title CHIANG MAI on its own, tracked to the road" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>02</b> title, tracked to the road</span></div>
+                <div class="layer" style="--z:320"><img src="assets/media/circuit-kart.png" alt="The kart cut out of the frame" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>03</b> kart, cut out per frame</span></div>
+              </div>
+              <div class="stage-ctl"><button class="toggle" type="button" aria-pressed="false" data-toggle="stage-circuit">Separate layers</button><span class="label">Frame 00:08:12</span></div>
             </div>
-            <ol class="notes">
-              <li><span>01</span><div><strong>Tracked to the ground.</strong> The letters are pinned to the road surface and move with the camera, rising out of the tarmac on the beat.</div></li>
-              <li><span>02</span><div><strong>Cut out every frame.</strong> Apple Vision separates each kart from the background, frame by frame, so it drives in front of the words.</div></li>
-              <li><span>03</span><div><strong>Then it erases them.</strong> In the next shot a kart drives through "CIRCUIT" and wipes it away as it passes.</div></li>
-            </ol>
+            <div class="side">
+              <div class="clip">
+                <div class="clip-frame"><video src="assets/media/circuit-scene.mp4" poster="assets/media/circuit-final.jpg" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div>
+                <div class="clip-cap"><span class="label"><b>●</b> Result</span><span class="label">00:07:30</span></div>
+              </div>
+              <ol class="notes" data-notes>
+                <li class="on"><span>01</span><div><strong>Tracked to the ground.</strong> The letters are pinned to the road surface and move with the camera, rising out of the tarmac on the beat.</div></li>
+                <li><span>02</span><div><strong>Cut out every frame.</strong> Apple Vision separates each kart from the background, frame by frame, so it drives in front of the words.</div></li>
+                <li><span>03</span><div><strong>Then it erases them.</strong> In the next shot a kart drives through "CIRCUIT" and wipes it away as it passes.</div></li>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 04 DEPTH (versailles) -->
-    <section class="sec bay" id="depth" aria-labelledby="depth-title">
+    <!-- 04 DEPTH (versailles), pinned -->
+    <section class="pin" id="depth" aria-labelledby="depth-title" data-pin>
+      <div class="pin-inner">
+        <div class="wrap">
+          <div class="sec-head">
+            <div class="sec-num"><b>04</b> Photos in 3D</div>
+            <div>
+              <h2 id="depth-title" data-split>A still photo, <span class="it">sliced by depth.</span></h2>
+            </div>
+          </div>
+          <div class="showcase">
+            <div class="stage" id="stage-depth">
+              <div class="stack" data-stack>
+                <div class="layer base" style="--z:0"><img src="assets/media/depth-base.jpg" alt="The full photo: red-leaved plants in front of a white wall and a window" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag"><b>far</b> the whole photo</span></div>
+                <div class="layer" style="--z:100"><img src="assets/media/depth-slice-2.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 2</span></div>
+                <div class="layer" style="--z:200"><img src="assets/media/depth-slice-4.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 4</span></div>
+                <div class="layer" style="--z:300"><img src="assets/media/depth-slice-6.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 6</span></div>
+                <div class="layer" style="--z:400"><img src="assets/media/depth-slice-8.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag"><b>near</b> plane 8</span></div>
+              </div>
+              <div class="stage-ctl"><button class="toggle" type="button" aria-pressed="false" data-toggle="stage-depth">Separate layers</button><span class="label">Depth Anything V2 · Core ML</span></div>
+            </div>
+            <div class="side">
+              <div class="clip">
+                <div class="clip-frame"><video src="assets/media/versailles-depth.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div>
+                <div class="clip-cap"><span class="label"><b>●</b> Result</span><span class="label">3D move</span></div>
+              </div>
+              <ol class="notes" data-notes>
+                <li class="on"><span>01</span><div><strong>Depth, measured locally.</strong> Apple's Core ML build of Depth Anything V2 runs on the laptop. No cloud call.</div></li>
+                <li><span>02</span><div><strong>Near moves faster.</strong> Nearer planes push in faster than far ones, which is what reads as real depth.</div></li>
+                <li><span>03</span><div><strong>The far plane stays whole.</strong> Slicing distant depth streaked skies, so everything far away moves as one.</div></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-label="More depth effects" style="padding-top:40px">
       <div class="wrap">
-        <div class="sec-head">
-          <div class="sec-num"><b>04</b> / Photos in 3D</div>
-          <div>
-            <h2 id="depth-title">A still photo, <span class="it">sliced by depth.</span></h2>
-            <p class="sec-lead">A depth model estimates how far away every pixel is, then the photo is cut into planes. The camera moves through them like a slider shot, so a still from Versailles de Flore turns into a moving one.</p>
-          </div>
-        </div>
-        <div class="showcase">
-          <div class="stage" id="stage-depth">
-            <div class="stack" data-stack>
-              <div class="layer base" style="--z:0"><img src="assets/media/depth-base.jpg" alt="The full photo: red-leaved plants in front of a white wall and a window" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag"><b>far</b> the whole photo</span></div>
-              <div class="layer" style="--z:90"><img src="assets/media/depth-slice-2.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 2</span></div>
-              <div class="layer" style="--z:180"><img src="assets/media/depth-slice-4.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 4</span></div>
-              <div class="layer" style="--z:270"><img src="assets/media/depth-slice-6.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 6</span></div>
-              <div class="layer" style="--z:360"><img src="assets/media/depth-slice-8.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag"><b>near</b> plane 8</span></div>
-            </div>
-            <div class="stage-ctl"><button class="toggle" type="button" aria-pressed="false" data-toggle="stage-depth">Separate layers</button><span class="label">Depth Anything V2 · Core ML</span></div>
-          </div>
-          <div class="side">
-            <div class="clip">
-              <div class="clip-frame marks"><video src="assets/media/versailles-depth.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div>
-              <div class="clip-cap"><span class="label">Result · parallax, then the 3D move</span></div>
-            </div>
-            <ol class="notes">
-              <li><span>01</span><div><strong>Depth, measured locally.</strong> Apple's Core ML build of Depth Anything V2 runs on the laptop. No cloud call.</div></li>
-              <li><span>02</span><div><strong>Near moves faster.</strong> Nearer planes push in faster than far ones, which is what reads as real depth.</div></li>
-              <li><span>03</span><div><strong>The far plane stays whole.</strong> Slicing distant depth streaked skies, so everything far away moves as one.</div></li>
-            </ol>
-          </div>
-        </div>
         <div class="trio">
-          <figure>
-            <div class="clip"><div class="clip-frame marks"><video src="assets/media/versailles-portal.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div></div>
+          <figure data-reveal style="--d:0">
+            <div class="clip"><div class="clip-frame"><video src="assets/media/versailles-portal.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div></div>
             <figcaption><strong>Through a real doorway</strong>The camera pushes into a carved gate and the next shot opens inside its arch.</figcaption>
           </figure>
-          <figure>
-            <div class="clip"><div class="clip-frame marks"><video src="assets/media/versailles-parallax.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div></div>
+          <figure data-reveal style="--d:1">
+            <div class="clip"><div class="clip-frame"><video src="assets/media/versailles-parallax.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div></div>
             <figcaption><strong>Lift-off parallax</strong>The subject is cut out and lifted off the photo, moving a little faster than the background.</figcaption>
           </figure>
-          <figure>
-            <div class="clip"><div class="clip-frame marks"><img src="assets/media/depth-map.jpg" alt="Depth map of the photo: the plants warm and bright, the wall behind them darker" width="540" height="960" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0" /></div></div>
+          <figure data-reveal style="--d:2">
+            <div class="clip"><div class="clip-frame"><img src="assets/media/depth-map.jpg" alt="Depth map of the photo: the plants warm and bright, the wall behind them darker" width="540" height="960" loading="lazy" /></div></div>
             <figcaption><strong>The depth map</strong>Warm is near, dark is far. Every plane above is cut from this one image.</figcaption>
           </figure>
         </div>
@@ -308,118 +370,138 @@
     </section>
 
     <!-- 05 WHAT IT SEES -->
-    <section class="sec" id="vision" aria-labelledby="vision-title">
+    <section class="sec" id="vision" aria-labelledby="vision-title" style="padding-top:60px">
       <div class="wrap">
         <div class="sec-head">
-          <div class="sec-num"><b>05</b> / What it sees</div>
+          <div class="sec-num"><b>05</b> What it sees</div>
           <div>
-            <h2 id="vision-title">One frame, <span class="it">four readings.</span></h2>
-            <p class="sec-lead">Small Swift tools run Apple Vision and Core ML on your Mac and hand their results to the editor. This is a GoPro frame from the paramotoring reel.</p>
+            <h2 id="vision-title" data-split>One frame, <span class="it">four readings.</span></h2>
+            <p class="sec-lead" data-reveal>Small Swift tools run Apple Vision and Core ML on your Mac and hand their results to the editor. This is a GoPro frame from the paramotoring reel.</p>
           </div>
         </div>
-        <div class="panels">
-          <figure><img src="assets/media/vision-frame.jpg" alt="Raw GoPro frame: a paramotor pilot in a red suit above a green valley" width="960" height="540" loading="lazy" /><figcaption><span class="label">A · input</span>The raw frame, before any edit.</figcaption></figure>
-          <figure><img src="assets/media/vision-subject.jpg" alt="The pilot cut out from the background with an outline" width="960" height="540" loading="lazy" /><figcaption><span class="label">B · subject</span>Cutout, so titles can sit behind people.</figcaption></figure>
-          <figure><img src="assets/media/vision-depth.jpg" alt="Depth map: the pilot bright and warm, the valley dark" width="960" height="540" loading="lazy" /><figcaption><span class="label">C · depth</span>How far away everything is.</figcaption></figure>
-          <figure><img src="assets/media/vision-saliency.jpg" alt="Attention heat map centred on the pilot, with the face boxed" width="960" height="540" loading="lazy" /><figcaption><span class="label">D · attention</span>Where the eye goes, and the face to keep clear of text.</figcaption></figure>
+        <div class="vision" data-reveal>
+          <div class="viewer" id="viewer">
+            <img class="on" src="assets/media/vision-frame.jpg" alt="Raw GoPro frame: a paramotor pilot in a red suit above a green valley" width="960" height="540" loading="lazy" />
+            <img src="assets/media/vision-subject.jpg" alt="The pilot cut out from the background with an outline" width="960" height="540" loading="lazy" />
+            <img src="assets/media/vision-depth.jpg" alt="Depth map: the pilot bright and warm, the valley dark" width="960" height="540" loading="lazy" />
+            <img src="assets/media/vision-saliency.jpg" alt="Attention heat map centred on the pilot, with the face boxed" width="960" height="540" loading="lazy" />
+            <span class="scan" aria-hidden="true"></span>
+            <div class="hud" aria-hidden="true"><span>Apple Vision</span><span id="viewer-tag">A · input</span></div>
+          </div>
+          <div class="readings" role="tablist" aria-label="Readings of the frame">
+            <button class="reading on" type="button" role="tab" aria-selected="true" style="--k:var(--text)"><span class="k">A</span><span><strong>Input</strong><small>The raw frame, before any edit.</small></span><span class="bar"></span></button>
+            <button class="reading" type="button" role="tab" aria-selected="false" style="--k:var(--c-teal)"><span class="k">B</span><span><strong>Subject</strong><small>Cutout, so titles can sit behind people.</small></span><span class="bar"></span></button>
+            <button class="reading" type="button" role="tab" aria-selected="false" style="--k:var(--c-amber)"><span class="k">C</span><span><strong>Depth</strong><small>How far away everything is.</small></span><span class="bar"></span></button>
+            <button class="reading" type="button" role="tab" aria-selected="false" style="--k:var(--red)"><span class="k">D</span><span><strong>Attention</strong><small>Where the eye goes, and the face to keep clear of text.</small></span><span class="bar"></span></button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- 06 REELS -->
-    <section class="sec" id="reels" aria-labelledby="reels-title" style="padding-top:0">
+    <section class="sec" id="reels" aria-labelledby="reels-title" style="padding-top:40px">
       <div class="wrap">
         <div class="sec-head">
-          <div class="sec-num"><b>06</b> / Reels</div>
+          <div class="sec-num"><b>06</b> Reels</div>
           <div>
-            <h2 id="reels-title">Same engine, <span class="it">three different looks.</span></h2>
-            <p class="sec-lead">Each place gets its own type and transitions. Tap one to play it; shown without music.</p>
+            <h2 id="reels-title" data-split>Same engine, <span class="it">three different looks.</span></h2>
+            <p class="sec-lead" data-reveal>Each place gets its own type and transitions. Tap one to play it; shown without music.</p>
           </div>
         </div>
         <div class="reels">
-          <figure>
-            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Chiang Mai Circuit reel"><video src="assets/media/chiang-mai-circuit.mp4" poster="assets/media/chiang-mai-circuit.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="play">Play · 0:21</span></button>
+          <figure data-reveal style="--d:0">
+            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Chiang Mai Circuit reel"><video src="assets/media/chiang-mai-circuit.mp4" poster="assets/media/chiang-mai-circuit.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="glare"></span><span class="dur">0:21</span><span class="num">01</span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
             <figcaption><strong>Chiang Mai Circuit</strong>Race lettering, titles set into the track, a whip pan on the beat.</figcaption>
           </figure>
-          <figure>
-            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Artistic Village reel"><video src="assets/media/artistic-village.mp4" poster="assets/media/artistic-village.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="play">Play · 0:24</span></button>
+          <figure data-reveal style="--d:1">
+            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Artistic Village reel"><video src="assets/media/artistic-village.mp4" poster="assets/media/artistic-village.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="glare"></span><span class="dur">0:24</span><span class="num">02</span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
             <figcaption><strong>Artistic Village</strong>A handwritten title and a sketch that paints itself into the next shot.</figcaption>
           </figure>
-          <figure>
-            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Paramotoring reel"><video src="assets/media/paramotoring.mp4" poster="assets/media/paramotoring.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="play">Play · 0:31</span></button>
+          <figure data-reveal style="--d:2">
+            <button class="reel-btn" type="button" aria-pressed="false" aria-label="Play the Paramotoring reel"><video src="assets/media/paramotoring.mp4" poster="assets/media/paramotoring.jpg" muted loop playsinline preload="none" width="720" height="1280"></video><span class="glare"></span><span class="dur">0:31</span><span class="num">03</span><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span></button>
             <figcaption><strong>Paramotoring</strong>Wide GoPro footage reframed into distinct angles; lift-off lands on the drop.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
+    <!-- Numbers -->
+    <section aria-label="Jauntcut in numbers">
+      <div class="wrap">
+        <div class="stats">
+          <div data-reveal style="--d:0"><span class="n" data-count="11">11</span><span class="label">Title styles</span></div>
+          <div data-reveal style="--d:1"><span class="n" data-count="15">15</span><span class="label">Transitions besides the cut</span></div>
+          <div data-reveal style="--d:2"><span class="n" data-count="60">60</span><span class="label">Frames a second</span></div>
+          <div data-reveal style="--d:3"><span class="n" data-count="0">0</span><span class="label">Files uploaded anywhere</span></div>
+        </div>
+      </div>
+    </section>
+
     <!-- 07 CHECKS -->
-    <section class="sec" id="checks" aria-labelledby="checks-title" style="padding-top:0">
+    <section class="sec" id="checks" aria-labelledby="checks-title">
       <div class="wrap">
         <div class="sec-head">
-          <div class="sec-num"><b>07</b> / The checks</div>
+          <div class="sec-num"><b>07</b> The checks</div>
           <div>
-            <h2 id="checks-title">Nothing renders <span class="it">until it passes.</span></h2>
-            <p class="sec-lead">Every rule reports what was actually produced, and a known problem stays a failure until it is fixed.</p>
+            <h2 id="checks-title" data-split>Nothing renders <span class="it">until it passes.</span></h2>
+            <p class="sec-lead" data-reveal>Every rule reports what was actually produced, and a known problem stays a failure until it is fixed.</p>
           </div>
         </div>
-        <div class="ledger">
-          <div class="ledger-row"><code>schema</code><span class="when">Before anything</span><p>Invalid or impossible edit settings fail in a second, not after a full render.</p></div>
-          <div class="ledger-row"><code>check</code><span class="when">Before render</span><p>Missing media, footage stretched past its pixels, clips running past their source, dead holds, text faster than 17 characters a second.</p></div>
-          <div class="ledger-row"><code>qa --pre</code><span class="when">Before render</span><p>The same scene twice, text over faces, colour jumps at cuts, clipped highlights, skin tones off the skin line.</p></div>
-          <div class="ledger-row"><code>qa --post</code><span class="when">After render</span><p>Black or frozen frames, loudness, the delivery file spec, leftover metadata.</p></div>
-          <div class="ledger-row"><code>timing-test</code><span class="when">Engine changes</span><p>Renders frames that encode their own number and reads every one back: off by more than one frame fails.</p></div>
-          <div class="ledger-row"><code>regress</code><span class="when">Engine changes</span><p>Hashes one frame per second of every finished reel, so a new feature cannot quietly change an old one.</p></div>
+        <div class="log" data-log>
+          <div class="log-row" style="--d:0"><code>schema</code><span class="when">Before anything</span><p>Invalid or impossible edit settings fail in a second, not after a full render.</p><span class="st">PASS</span></div>
+          <div class="log-row" style="--d:1"><code>check</code><span class="when">Before render</span><p>Missing media, footage stretched past its pixels, clips running past their source, dead holds, text faster than 17 characters a second.</p><span class="st">PASS</span></div>
+          <div class="log-row" style="--d:2"><code>qa --pre</code><span class="when">Before render</span><p>The same scene twice, text over faces, colour jumps at cuts, clipped highlights, skin tones off the skin line.</p><span class="st">PASS</span></div>
+          <div class="log-row" style="--d:3"><code>qa --post</code><span class="when">After render</span><p>Black or frozen frames, loudness, the delivery file spec, leftover metadata.</p><span class="st">PASS</span></div>
+          <div class="log-row" style="--d:4"><code>timing-test</code><span class="when">Engine changes</span><p>Renders frames that encode their own number and reads every one back: off by more than one frame fails.</p><span class="st">PASS</span></div>
+          <div class="log-row" style="--d:5"><code>regress</code><span class="when">Engine changes</span><p>Hashes one frame per second of every finished reel, so a new feature cannot quietly change an old one.</p><span class="st">PASS</span></div>
         </div>
-        <p class="aside-note">Thresholds come from measuring real footage. The same scene shown twice measured a distance of 0.21 to 0.42, different shots 0.49 or more, so the repeat check fails below <b>0.45</b>.</p>
+        <p class="aside-note" data-reveal>Thresholds come from measuring real footage. The same scene shown twice measured a distance of 0.21 to 0.42, different shots 0.49 or more, so the repeat check fails below <b>0.45</b>.</p>
       </div>
     </section>
 
     <!-- 08 INSTALL -->
-    <section class="sec bay" id="install" aria-labelledby="install-title">
+    <section class="sec install-sec" id="install" aria-labelledby="install-title" style="padding-top:40px">
       <div class="wrap">
         <div class="sec-head">
-          <div class="sec-num"><b>08</b> / Install</div>
-          <div>
-            <h2 id="install-title">One line in Terminal. <span class="it">That's the setup.</span></h2>
-            <p class="sec-lead">The installer checks your Mac, installs what's missing, downloads the depth model and tests itself. It never uses sudo, and running it again updates Jauntcut.</p>
-          </div>
+          <div class="sec-num"><b>08</b> Install</div>
+          <h2 id="install-title" data-split>One line in Terminal. <span class="it">That's the setup.</span></h2>
+          <p class="sec-lead" data-reveal>The installer checks your Mac, installs what's missing, downloads the depth model and tests itself. It never uses sudo, and running it again updates Jauntcut.</p>
         </div>
-        <div class="term">
+        <div class="term" data-term data-reveal>
           <div class="term-bar"><span><i></i><i></i><i></i></span><span class="label">Terminal · zsh</span></div>
           <div class="install">
             <code>curl -fsSL https://jauntcut.com/install.sh | bash</code>
             <button class="copy" type="button">Copy</button>
           </div>
           <div class="term-out" aria-hidden="true">
-            <div><span class="ok">✓</span> macOS · Apple silicon · Xcode command-line tools</div>
-            <div><span class="ok">✓</span> Node · ffmpeg · NumPy and Pillow</div>
-            <div><span class="ok">✓</span> depth model downloaded and verified</div>
-            <div><span class="ok">✓</span> self-check passed · Jauntcut is ready in ~/jauntcut</div>
+            <div style="--d:0"><span class="ok">✓</span>macOS · Apple silicon · Xcode command-line tools</div>
+            <div style="--d:1"><span class="ok">✓</span>Node · ffmpeg · NumPy and Pillow</div>
+            <div style="--d:2"><span class="ok">✓</span>depth model downloaded and verified</div>
+            <div style="--d:3"><span class="ok">✓</span>self-check passed · Jauntcut is ready in ~/jauntcut</div>
           </div>
         </div>
         <div class="install-meta">
           <span class="label">macOS 14 (Sonoma) or newer</span>
           <span class="label">Apple silicon recommended</span>
           <span class="label">About 2 GB</span>
-          <a class="label" href="start" style="color:var(--bay-text)">Read the full guide →</a>
+          <a class="label" href="start">Read the full guide →</a>
         </div>
       </div>
     </section>
 
     <!-- 09 NEXT -->
-    <section class="sec" aria-labelledby="road-title">
+    <section class="sec" aria-labelledby="road-title" style="padding-top:40px">
       <div class="wrap">
         <div class="sec-head">
-          <div class="sec-num"><b>09</b> / Next</div>
+          <div class="sec-num"><b>09</b> Next</div>
           <div>
-            <h2 id="road-title">Today it runs from Terminal. <span class="it">Next, an app.</span></h2>
+            <h2 id="road-title" data-split>Today it runs from Terminal. <span class="it">Next, an app.</span></h2>
           </div>
         </div>
         <div class="road">
-          <div><span class="label"><b>●</b> Available now</span><h3>One-line install</h3><p>Sets up everything on a Mac and makes your first reel in six steps.</p></div>
-          <div><span class="label">Next</span><h3>A Mac app</h3><p>Drop in your footage, pick a look, render. No Terminal and no code.</p></div>
-          <div><span class="label">Later</span><h3>Directed by a sentence</h3><p>"Moody old village, slow" turned into a checked edit, with a look suggested from the music and footage.</p></div>
+          <div data-reveal style="--d:0"><span class="chip"><span class="dot"></span>Available now</span><h3>One-line install</h3><p>Sets up everything on a Mac and makes your first reel in six steps.</p></div>
+          <div data-reveal style="--d:1"><span class="chip">Next</span><h3>A Mac app</h3><p>Drop in your footage, pick a look, render. No Terminal and no code.</p></div>
+          <div data-reveal style="--d:2"><span class="chip">Later</span><h3>Directed by a sentence</h3><p>"Moody old village, slow" turned into a checked edit, with a look suggested from the music and footage.</p></div>
         </div>
       </div>
     </section>
@@ -427,7 +509,7 @@
 
   <footer class="footer">
     <div class="wrap">
-      <span class="big">Jauntcut</span>
+      <span class="big" aria-hidden="true">Jauntcut</span>
       <nav aria-label="Footer">
         <a href="start">Install guide</a>
         <a href="https://github.com/iamVBJ/jauntcut">Source on GitHub</a>
@@ -437,6 +519,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=4" defer></script>
+  <script src="assets/js/site.js?v=6" defer></script>
 </body>
 </html>
