@@ -61,8 +61,8 @@ code, .mono { font-family: var(--mono); }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 20px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
 .brand-mark { width: 28px; height: 28px; flex: none; }
-.brand-mark .bm-b { transition: transform .45s var(--ease); }
-.brand:hover .brand-mark .bm-b { transform: translate(-.6px, .7px); }
+.brand-mark .bm-ph { transition: transform .6s var(--ease); }
+.brand:hover .brand-mark .bm-ph { transform: translateX(-6px); }
 .brand-word { font-family: var(--display); font-stretch: 62.5%; font-weight: 800; font-size: 25px; letter-spacing: .02em; text-transform: uppercase; line-height: 1; }
 .brand-tag { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); border: 1px solid var(--line-2); padding: 3px 6px; border-radius: 4px; }
 .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase; }
@@ -318,18 +318,22 @@ h3 { font-family: var(--sans); font-weight: 600; font-size: 21px; line-height: 1
 .rd.fx-on .fx { opacity: 1; clip-path: inset(0 0 0 0); }
 .an-subject .bg { filter: brightness(.55) saturate(.6); }
 .an-subject .cut { filter: drop-shadow(0 0 1.5px var(--c-teal)) drop-shadow(0 0 1.5px var(--c-teal)) drop-shadow(0 0 14px rgba(47,214,195,.6)); }
-.fx-title .ttl { position: absolute; left: 0; right: 0; top: 24%; text-align: center; font-family: var(--display); font-stretch: 62.5%; font-weight: 800; text-transform: uppercase; font-size: 15.5cqw; line-height: 1; letter-spacing: .01em; color: #fff; text-shadow: 0 4px 30px rgba(0,0,0,.25); transform: translateY(30%); opacity: 0; transition: transform .9s var(--ease) .35s, opacity .6s .35s; }
+.fx-title .ttl { position: absolute; left: 0; right: 0; top: 24%; text-align: center; font-family: var(--display); font-stretch: 62.5%; font-weight: 800; text-transform: uppercase; font-size: 15.5cqw; line-height: 1; letter-spacing: .01em; background: linear-gradient(180deg, #ffd166 0%, #ff7a2e 55%, #ff3d2e 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 0 rgba(10,10,20,.55)) drop-shadow(0 10px 28px rgba(10,10,20,.45)); transform: translateY(30%); opacity: 0; transition: transform .9s var(--ease) .35s, opacity .6s .35s; }
 .rd.fx-on .fx-title .ttl { transform: none; opacity: 1; }
-.fx-depth .bg, .fx-depth .cut { transform-origin: 60% 70%; }
-.rd.fx-on .fx-depth .bg { animation: depthBg 2.4s var(--ease) forwards; }
-.rd.fx-on .fx-depth .cut { animation: depthFg 2.4s var(--ease) forwards; filter: drop-shadow(0 20px 24px rgba(0,0,0,.45)); }
-@keyframes depthBg { from { transform: scale(1.02) translateX(1%); } to { transform: scale(1.1) translateX(-2%); } }
-@keyframes depthFg { from { transform: scale(1.02) translateX(1%); } to { transform: scale(1.2) translate(-5%, -2%); } }
+.fx-depth { perspective: 1100px; perspective-origin: 50% 45%; }
+.fx-depth .stage { position: absolute; inset: 0; transform-style: preserve-3d; }
+.fx-depth .bg { transform: translateZ(-80px) scale(1.2); filter: blur(1.2px) saturate(1.05); }
+.fx-depth .cut { transform: translateZ(50px) scale(.92); filter: drop-shadow(0 26px 22px rgba(0,0,0,.45)); }
+.rd.fx-on .fx-depth .stage { animation: orbit 6s cubic-bezier(.45,0,.55,1) infinite; }
+.rd.fx-on .fx-depth .cut { animation: hover3d 2.5s cubic-bezier(.45,0,.55,1) infinite alternate; }
+@keyframes orbit { 0%, 100% { transform: none; } 25% { transform: rotateY(-7deg) rotateX(2.5deg); } 75% { transform: rotateY(7deg) rotateX(-2deg); } }
+@keyframes hover3d { from { transform: translateZ(50px) scale(.92) translateY(0); } to { transform: translateZ(62px) scale(.91) translateY(-1%); } }
 .fx-place .face { position: absolute; left: 46.5%; top: 39%; width: 6.2%; height: 11%; border: 1.5px dashed var(--red); border-radius: 4px; }
 .fx-place .face i { position: absolute; left: 50%; top: calc(100% + 6px); transform: translateX(-50%); white-space: nowrap; font-style: normal; font-family: var(--mono); font-size: max(9px, 1.1cqw); letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--red); padding: 2px 6px; border-radius: 3px; }
-.fx-place .cap { position: absolute; right: 4%; top: 8%; display: flex; flex-direction: column; align-items: flex-end; text-align: right; font-family: var(--display); font-stretch: 62.5%; font-weight: 800; text-transform: uppercase; font-size: 10cqw; line-height: .9; color: #fff; text-shadow: 0 4px 24px rgba(0,0,0,.35); transform: translateY(-20%); opacity: 0; transition: transform .8s var(--ease) .35s, opacity .5s .35s; }
+.fx-place .cap { position: absolute; right: 4%; top: 8%; display: flex; flex-direction: column; align-items: flex-end; text-align: right; font-family: var(--display); font-stretch: 62.5%; font-weight: 800; text-transform: uppercase; font-size: 10cqw; line-height: .9; transform: translateY(-20%); opacity: 0; transition: transform .8s var(--ease) .35s, opacity .5s .35s; }
 .fx-place .cap small { display: block; margin-top: 8px; font-family: var(--mono); font-stretch: 100%; font-weight: 400; font-size: max(9px, 1.15cqw); letter-spacing: .12em; color: #fff; background: rgba(47,214,195,.85); color: #0b0b0d; padding: 3px 7px; border-radius: 3px; display: inline-block; }
 .rd.fx-on .fx-place .cap { transform: none; opacity: 1; }
+.fx-place .cap b { display: block; background: linear-gradient(180deg, #ffd166 0%, #ff7a2e 55%, #ff3d2e 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 2px 0 rgba(10,10,20,.55)) drop-shadow(0 10px 28px rgba(10,10,20,.45)); }
 .viewer .scan { position: absolute; left: 0; right: 0; height: 30%; top: -30%; background: linear-gradient(180deg, transparent, rgba(47,214,195,.18), transparent); border-bottom: 1px solid rgba(47,214,195,.6); pointer-events: none; }
 .viewer.scanning .scan { animation: scan .9s var(--ease-io); }
 @keyframes scan { to { top: 100%; } }
