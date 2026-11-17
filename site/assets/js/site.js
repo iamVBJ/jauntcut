@@ -192,8 +192,8 @@
       });
       if (pipe) {
         var pr = pipe.getBoundingClientRect();
-        // Starts once the steps are well on screen (top past 60% of the height), full by the time they reach 20%.
-        var pp = Math.max(0, Math.min(1, (vh * 0.6 - pr.top) / (vh * 0.4)));
+        // Starts as the steps come on screen (top at 85% of the height), full once the top reaches 5%.
+        var pp = Math.max(0, Math.min(1, (vh * 0.85 - pr.top) / (vh * 0.8)));
         pipe.style.setProperty('--p', pp.toFixed(3));
         steps.forEach(function (s, i) { s.classList.toggle('lit', pp > 0 && pp >= i / steps.length); });
       }

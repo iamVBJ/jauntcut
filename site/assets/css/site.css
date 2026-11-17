@@ -245,7 +245,7 @@ h3 { font-family: var(--sans); font-weight: 600; font-size: 21px; line-height: 1
 .pipeline { --p: 0; position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .pipeline::before, .pipeline::after { content: ""; position: absolute; top: 22px; left: 22px; right: 22px; height: 2px; border-radius: 2px; }
 .pipeline::before { background: var(--line-2); }
-.pipeline::after { background: linear-gradient(90deg, var(--c-teal), var(--c-violet), var(--c-amber), var(--red)); transform-origin: left; transform: scaleX(var(--p)); }
+.pipeline::after { background: linear-gradient(90deg, var(--c-teal), var(--c-violet), var(--c-amber), var(--red)); transform-origin: left; transform: scaleX(var(--p)); transition: transform .6s cubic-bezier(.25,.6,.3,1); }
 .step { position: relative; padding-top: 70px; display: flex; flex-direction: column; }
 .step-n { position: absolute; top: 0; left: 0; z-index: 1; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-family: var(--mono); font-size: 12px; background: var(--bg); border: 1px solid var(--line-2); color: var(--text-2); transition: background .4s, color .4s, border-color .4s, box-shadow .4s; }
 .step.lit .step-n { background: var(--k); border-color: var(--k); color: #0b0b0d; box-shadow: 0 0 30px -4px var(--k); }
