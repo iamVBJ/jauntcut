@@ -1,0 +1,11 @@
+// Deploys the website in site/ as static assets on Cloudflare: npx wrangler deploy
+{
+  "$schema": "https://unpkg.com/wrangler@4.163.0/config-schema.json",
+  "name": "jauntcut",
+  "compatibility_date": "2026-11-17",
+  "assets": {
+    "directory": "./site",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
