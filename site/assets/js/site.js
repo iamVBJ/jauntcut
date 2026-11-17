@@ -4,7 +4,7 @@
 // - the hero reel drives the timeline: playhead, active shot, timecode, beat counter,
 //   pulse and audio meters, all at the song's 128 BPM
 // - pinned layer scenes separate in 3D as you scroll through them
-// - vision readings cycle; reels tilt and play on tap; counters, render log, terminal
+// - vision readings cycle; reels play on tap; counters, render log, terminal
 (function () {
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -234,7 +234,7 @@
     }
   }
 
-  // ---------- Reels: tilt, tap to play, one at a time ----------
+  // ---------- Reels: glare, tap to play, one at a time ----------
   var tiles = $$('.reel-btn');
   tiles.forEach(function (tile) {
     var v = $('video', tile);
@@ -248,12 +248,9 @@
     tile.addEventListener('pointermove', function (e) {
       if (e.pointerType !== 'mouse') return;
       var r = tile.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-      tile.style.setProperty('--rx', ((x - .5) * 10).toFixed(2) + 'deg');
-      tile.style.setProperty('--ry', ((.5 - y) * 10).toFixed(2) + 'deg');
       tile.style.setProperty('--gx', (x * 100).toFixed(1) + '%');
       tile.style.setProperty('--gy', (y * 100).toFixed(1) + '%');
     });
-    tile.addEventListener('pointerleave', function () { tile.style.setProperty('--rx', '0deg'); tile.style.setProperty('--ry', '0deg'); });
   });
 
   // ---------- Spotlight cards and magnetic buttons ----------
