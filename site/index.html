@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=JetBrains+Mono:wght@400;500&display=swap" />
   <script>(function(d){d.className+=" js";var on=function(){d.className+=" fonts-on"};if(document.fonts&&document.fonts.ready){Promise.race([document.fonts.ready,new Promise(function(r){setTimeout(r,1200)})]).then(on)}else on()})(document.documentElement)</script>
-  <link rel="stylesheet" href="assets/css/site.css?v=29" />
+  <link rel="stylesheet" href="assets/css/site.css?v=30" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -183,13 +183,6 @@
       </div>
     </section>
 
-    <div class="ticker" aria-hidden="true">
-      <div class="ticker-row">
-        <span>Beat-cut</span><span>11 title styles</span><span>15 transitions</span><span>1080×1920 · 60 fps</span><span>On-device vision</span><span>Edits as code</span><span>No upload</span><span>No watermark</span>
-        <span>Beat-cut</span><span>11 title styles</span><span>15 transitions</span><span>1080×1920 · 60 fps</span><span>On-device vision</span><span>Edits as code</span><span>No upload</span><span>No watermark</span>
-      </div>
-    </div>
-
     <!-- 01 WHAT -->
     <section class="sec" id="what" aria-labelledby="what-title">
       <div class="wrap">
@@ -267,105 +260,11 @@
       </div>
     </section>
 
-    <!-- 03 SCENE TEXT (circuit), pinned while the layers separate -->
-    <section class="pin" id="scene" aria-labelledby="scene-title" data-pin>
-      <div class="pin-inner">
-        <div class="wrap">
-          <div class="sec-head">
-            <div class="sec-num"><b>03</b> Titles in the scene</div>
-            <div>
-              <h2 id="scene-title" data-split>The title sits in the scene. <span class="it">Your subject moves over it.</span></h2>
-            </div>
-          </div>
-          <div class="showcase">
-            <div class="stage" id="stage-circuit">
-              <div class="stack" data-stack>
-                <div class="layer base" style="--z:0"><img src="assets/media/circuit-plate.jpg" alt="Raw footage: the kart track with a kart passing" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>01</b> footage</span></div>
-                <div class="layer" style="--z:160"><img src="assets/media/circuit-title.png" alt="The title CHIANG MAI on its own, tracked to the road" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>02</b> title, tracked to the road</span></div>
-                <div class="layer" style="--z:320"><img src="assets/media/circuit-kart.png" alt="The kart cut out of the frame" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>03</b> kart, cut out per frame</span></div>
-              </div>
-              <div class="stage-ctl"><button class="toggle" type="button" aria-pressed="false" data-toggle="stage-circuit">Separate layers</button><span class="label">Frame 00:08:12</span></div>
-            </div>
-            <div class="side">
-              <div class="clip">
-                <div class="clip-frame"><video src="assets/media/circuit-scene.mp4" data-poster="assets/media/circuit-final.jpg" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div>
-                <div class="clip-cap"><span class="label"><b>●</b> Result</span><span class="label">00:07:30</span></div>
-              </div>
-              <ol class="notes" data-notes>
-                <li class="on"><span>01</span><div><strong>Tracked to the ground.</strong> The letters are pinned to the ground in the shot and move with the camera, rising into place on the beat.</div></li>
-                <li><span>02</span><div><strong>Cut out every frame.</strong> Apple Vision separates the moving subject from the background, frame by frame, so it passes in front of the words.</div></li>
-                <li><span>03</span><div><strong>Then it erases them.</strong> When the subject crosses the title, it wipes the letters away as it passes.</div></li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 04 DEPTH (versailles), pinned -->
-    <section class="pin" id="depth" aria-labelledby="depth-title" data-pin>
-      <div class="pin-inner">
-        <div class="wrap">
-          <div class="sec-head">
-            <div class="sec-num"><b>04</b> Photos in 3D</div>
-            <div>
-              <h2 id="depth-title" data-split>A still photo, <span class="it">sliced by depth.</span></h2>
-            </div>
-          </div>
-          <div class="showcase">
-            <div class="stage" id="stage-depth">
-              <div class="stack" data-stack>
-                <div class="layer base" style="--z:0"><img src="assets/media/depth-base.jpg" alt="The full photo: red-leaved plants in front of a white wall and a window" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag"><b>far</b> the whole photo</span></div>
-                <div class="layer" style="--z:100"><img src="assets/media/depth-slice-2.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 2</span></div>
-                <div class="layer" style="--z:200"><img src="assets/media/depth-slice-4.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 4</span></div>
-                <div class="layer" style="--z:300"><img src="assets/media/depth-slice-6.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 6</span></div>
-                <div class="layer" style="--z:400"><img src="assets/media/depth-slice-8.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag"><b>near</b> plane 8</span></div>
-              </div>
-              <div class="stage-ctl"><button class="toggle" type="button" aria-pressed="false" data-toggle="stage-depth">Separate layers</button><span class="label">Depth Anything V2 · Core ML</span></div>
-            </div>
-            <div class="side">
-              <div class="clip">
-                <div class="clip-frame"><video src="assets/media/versailles-depth.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div>
-                <div class="clip-cap"><span class="label"><b>●</b> Result</span><span class="label">3D move</span></div>
-              </div>
-              <ol class="notes" data-notes>
-                <li class="on"><span>01</span><div><strong>Depth, measured locally.</strong> Apple's Core ML build of Depth Anything V2 runs on the laptop. No cloud call.</div></li>
-                <li><span>02</span><div><strong>Near moves faster.</strong> Nearer planes push in faster than far ones, which is what reads as real depth.</div></li>
-                <li><span>03</span><div><strong>The far plane stays whole.</strong> Slicing distant depth streaked skies, so everything far away moves as one.</div></li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="sec" aria-label="More depth effects" style="padding-top:40px">
-      <div class="wrap">
-        <div class="trio">
-          <figure data-reveal style="--d:0">
-            <div class="clip"><div class="clip-frame"><video src="assets/media/versailles-portal.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div></div>
-            <figcaption><strong>Through a real doorway</strong>The camera pushes into a doorway or arch in the photo, and the next shot opens inside it.</figcaption>
-          </figure>
-          <figure data-reveal style="--d:1">
-            <div class="clip"><div class="clip-frame liftoff" role="img" aria-label="A paraglider wing cut out of the sky and lifted towards the camera while the mountains behind it drift slowly">
-              <img class="lo-bg" src="assets/media/liftoff-plate.jpg" alt="" width="720" height="1280" loading="lazy" />
-              <img class="lo-fg" src="assets/media/liftoff-wing.webp" alt="" width="720" height="1280" loading="lazy" />
-            </div></div>
-            <figcaption><strong>Lift-off parallax</strong>The subject is cut out of a still and drifts towards the camera faster than the background, so one photo moves like a shot.</figcaption>
-          </figure>
-          <figure data-reveal style="--d:2">
-            <div class="clip"><div class="clip-frame"><img src="assets/media/depth-map.jpg" alt="Depth map of the photo: the plants warm and bright, the wall behind them darker" width="540" height="960" loading="lazy" /></div></div>
-            <figcaption><strong>The depth map</strong>Warm is near, dark is far. Every plane above is cut from this one image.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 05 WHAT IT SEES -->
-    <section class="sec" id="vision" aria-labelledby="vision-title" style="padding-top:60px">
+    <!-- 03 WHAT IT SEES -->
+    <section class="sec" id="vision" aria-labelledby="vision-title" style="padding-top:0">
       <div class="wrap">
         <div class="sec-head">
-          <div class="sec-num"><b>05</b> What it sees</div>
+          <div class="sec-num"><b>03</b> What it sees</div>
           <div>
             <h2 id="vision-title" data-split>One frame, <span class="it">four readings.</span></h2>
             <p class="sec-lead" data-reveal>Small Swift tools run Apple Vision and Core ML on your Mac and hand their results to the editor. Each reading of a single frame is followed by what the editor does with it.</p>
@@ -424,6 +323,100 @@
             <button class="reading" type="button" role="tab" aria-selected="false" style="--k:var(--c-amber)"><span class="k">C</span><span><strong>Depth</strong><small>How far away everything is, for a 3D push-in.</small></span><span class="bar"></span></button>
             <button class="reading" type="button" role="tab" aria-selected="false" style="--k:var(--accent)"><span class="k">D</span><span><strong>Attention</strong><small>Where the eye goes, so text lands clear of the face.</small></span><span class="bar"></span></button>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 SCENE TEXT (circuit), pinned while the layers separate -->
+    <section class="pin" id="scene" aria-labelledby="scene-title" data-pin>
+      <div class="pin-inner">
+        <div class="wrap">
+          <div class="sec-head">
+            <div class="sec-num"><b>04</b> Titles in the scene</div>
+            <div>
+              <h2 id="scene-title" data-split>The title sits in the scene. <span class="it">Your subject moves over it.</span></h2>
+            </div>
+          </div>
+          <div class="showcase">
+            <div class="stage" id="stage-circuit">
+              <div class="stack" data-stack>
+                <div class="layer base" style="--z:0"><img src="assets/media/circuit-plate.jpg" alt="Raw footage: the kart track with a kart passing" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>01</b> footage</span></div>
+                <div class="layer" style="--z:160"><img src="assets/media/circuit-title.png" alt="The title CHIANG MAI on its own, tracked to the road" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>02</b> title, tracked to the road</span></div>
+                <div class="layer" style="--z:320"><img src="assets/media/circuit-kart.png" alt="The kart cut out of the frame" width="720" height="1280" loading="lazy" /><span class="edge"></span><span class="tag"><b>03</b> kart, cut out per frame</span></div>
+              </div>
+              <div class="stage-ctl"><button class="toggle" type="button" aria-pressed="false" data-toggle="stage-circuit">Separate layers</button><span class="label">Frame 00:08:12</span></div>
+            </div>
+            <div class="side">
+              <div class="clip">
+                <div class="clip-frame"><video src="assets/media/circuit-scene.mp4" data-poster="assets/media/circuit-final.jpg" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div>
+                <div class="clip-cap"><span class="label"><b>●</b> Result</span><span class="label">00:07:30</span></div>
+              </div>
+              <ol class="notes" data-notes>
+                <li class="on"><span>01</span><div><strong>Tracked to the ground.</strong> The letters are pinned to the ground in the shot and move with the camera, rising into place on the beat.</div></li>
+                <li><span>02</span><div><strong>Cut out every frame.</strong> Apple Vision separates the moving subject from the background, frame by frame, so it passes in front of the words.</div></li>
+                <li><span>03</span><div><strong>Then it erases them.</strong> When the subject crosses the title, it wipes the letters away as it passes.</div></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 DEPTH (versailles), pinned -->
+    <section class="pin" id="depth" aria-labelledby="depth-title" data-pin>
+      <div class="pin-inner">
+        <div class="wrap">
+          <div class="sec-head">
+            <div class="sec-num"><b>05</b> Photos in 3D</div>
+            <div>
+              <h2 id="depth-title" data-split>A still photo, <span class="it">sliced by depth.</span></h2>
+            </div>
+          </div>
+          <div class="showcase">
+            <div class="stage" id="stage-depth">
+              <div class="stack" data-stack>
+                <div class="layer base" style="--z:0"><img src="assets/media/depth-base.jpg" alt="The full photo: red-leaved plants in front of a white wall and a window" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag"><b>far</b> the whole photo</span></div>
+                <div class="layer" style="--z:100"><img src="assets/media/depth-slice-2.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 2</span></div>
+                <div class="layer" style="--z:200"><img src="assets/media/depth-slice-4.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 4</span></div>
+                <div class="layer" style="--z:300"><img src="assets/media/depth-slice-6.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag">plane 6</span></div>
+                <div class="layer" style="--z:400"><img src="assets/media/depth-slice-8.webp" alt="" width="540" height="960" loading="lazy" /><span class="edge"></span><span class="tag"><b>near</b> plane 8</span></div>
+              </div>
+              <div class="stage-ctl"><button class="toggle" type="button" aria-pressed="false" data-toggle="stage-depth">Separate layers</button><span class="label">Depth Anything V2 · Core ML</span></div>
+            </div>
+            <div class="side">
+              <div class="clip">
+                <div class="clip-frame"><video src="assets/media/versailles-depth.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div>
+                <div class="clip-cap"><span class="label"><b>●</b> Result</span><span class="label">3D move</span></div>
+              </div>
+              <ol class="notes" data-notes>
+                <li class="on"><span>01</span><div><strong>Depth, measured locally.</strong> Apple's Core ML build of Depth Anything V2 runs on the laptop. No cloud call.</div></li>
+                <li><span>02</span><div><strong>Near moves faster.</strong> Nearer planes push in faster than far ones, which is what reads as real depth.</div></li>
+                <li><span>03</span><div><strong>The far plane stays whole.</strong> Slicing distant depth streaked skies, so everything far away moves as one.</div></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" aria-label="More depth effects" style="padding-top:40px">
+      <div class="wrap">
+        <div class="trio">
+          <figure data-reveal style="--d:0">
+            <div class="clip"><div class="clip-frame"><video src="assets/media/versailles-portal.mp4" muted loop playsinline preload="none" width="720" height="1280" data-autoplay></video></div></div>
+            <figcaption><strong>Through a real doorway</strong>The camera pushes into a doorway or arch in the photo, and the next shot opens inside it.</figcaption>
+          </figure>
+          <figure data-reveal style="--d:1">
+            <div class="clip"><div class="clip-frame liftoff" role="img" aria-label="A paraglider wing cut out of the sky and lifted towards the camera while the mountains behind it drift slowly">
+              <img class="lo-bg" src="assets/media/liftoff-plate.jpg" alt="" width="720" height="1280" loading="lazy" />
+              <img class="lo-fg" src="assets/media/liftoff-wing.webp" alt="" width="720" height="1280" loading="lazy" />
+            </div></div>
+            <figcaption><strong>Lift-off parallax</strong>The subject is cut out of a still and drifts towards the camera faster than the background, so one photo moves like a shot.</figcaption>
+          </figure>
+          <figure data-reveal style="--d:2">
+            <div class="clip"><div class="clip-frame"><img src="assets/media/depth-map.jpg" alt="Depth map of the photo: the plants warm and bright, the wall behind them darker" width="540" height="960" loading="lazy" /></div></div>
+            <figcaption><strong>The depth map</strong>Warm is near, dark is far. Every plane above is cut from this one image.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -525,6 +518,13 @@
     </section>
   </main>
 
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-row">
+      <span>Beat-cut</span><span>11 title styles</span><span>15 transitions</span><span>1080×1920 · 60 fps</span><span>On-device vision</span><span>Edits as code</span><span>No upload</span><span>No watermark</span>
+      <span>Beat-cut</span><span>11 title styles</span><span>15 transitions</span><span>1080×1920 · 60 fps</span><span>On-device vision</span><span>Edits as code</span><span>No upload</span><span>No watermark</span>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="wrap">
       <span class="big" aria-hidden="true">Jauntcut</span>
@@ -537,6 +537,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/site.js?v=13" defer></script>
+  <script src="assets/js/site.js?v=15" defer></script>
 </body>
 </html>

@@ -157,7 +157,7 @@
   // ---------- Scroll-driven bits ----------
   var smooth = function (x) { x = x < 0 ? 0 : x > 1 ? 1 : x; return x * x * (3 - 2 * x); };
   var pins = $$('[data-pin]').map(function (sec) {
-    return { sec: sec, stack: $('[data-stack]', sec), notes: $$('[data-notes] li', sec), btn: $('[data-toggle]', sec), pinned: null };
+    return { sec: sec, inner: $('.pin-inner', sec), stage: $('.stage', sec), stack: $('[data-stack]', sec), notes: $$('[data-notes] li', sec), btn: $('[data-toggle]', sec), pinned: null };
   });
   var setStack = function (pin, p) {
     pin.stack.style.setProperty('--p', p.toFixed(3));
@@ -185,10 +185,14 @@
       pins.forEach(function (pin) {
         if (pin.pinned !== null) return;
         var r = pin.sec.getBoundingClientRect();
-        var span = r.height - vh, p;
-        if (span > vh * 0.3) p = (-r.top) / span;              // pinned: progress through the sticky run
-        else p = (vh - r.top) / (vh * 0.9 + r.height * 0.15);   // not pinned (small screens)
-        setStack(pin, smooth(p * 1.15 - 0.05));
+        var span = r.height - vh;
+        // Pinned only while the CSS makes the scene sticky; on small screens it is a tall, ordinary block.
+        var sticky = pin.inner && getComputedStyle(pin.inner).position === 'sticky';
+        if (sticky && span > vh * 0.3) { setStack(pin, smooth((-r.top) / span * 1.15 - 0.05)); return; } // pinned: progress through the sticky run
+        // Not pinned (small screens): follow the image itself. Starts as its top comes up past 90% of the
+        // screen, fully apart once its top reaches 30%, so the whole move plays while it is in view.
+        var st = (pin.stage || pin.sec).getBoundingClientRect().top;
+        setStack(pin, smooth((vh * 0.9 - st) / (vh * 0.6)));
       });
       if (pipe) {
         var pr = pipe.getBoundingClientRect();
