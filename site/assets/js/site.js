@@ -163,14 +163,39 @@
     pin.stack.style.setProperty('--p', p.toFixed(3));
     var idx = Math.min(pin.notes.length - 1, Math.floor(p * pin.notes.length * 0.999));
     pin.notes.forEach(function (n, i) { n.classList.toggle('on', i === Math.max(0, idx)); });
+    if (pin.pinned === null) setBtn(pin, p > 0.5); // while scroll drives it, the button offers the opposite
   };
+  var setBtn = function (pin, apart) {
+    if (!pin.btn || pin.btn.getAttribute('aria-pressed') === String(apart)) return;
+    pin.btn.setAttribute('aria-pressed', String(apart));
+    pin.btn.textContent = apart ? 'Put them back' : 'Separate layers';
+  };
+  // Small screens lock the scenes too (see the CSS); the result clip then moves out of the locked
+  // screen to just below it, and back beside the notes when the screen is wide or short again.
+  var lockMQ = window.matchMedia ? window.matchMedia('(max-width: 900px) and (min-height: 600px)') : null;
+  pins.forEach(function (pin) {
+    pin.clip = $('.side .clip', pin.sec); pin.notesEl = $('[data-notes]', pin.sec);
+    if (!pin.clip || !pin.notesEl) return;
+    pin.after = document.createElement('div'); pin.after.className = 'wrap pin-after';
+    pin.sec.parentNode.insertBefore(pin.after, pin.sec.nextSibling);
+  });
+  var placeClips = function () {
+    var below = !!(lockMQ && lockMQ.matches);
+    pins.forEach(function (pin) {
+      if (!pin.after) return;
+      if (below && pin.clip.parentNode !== pin.after) pin.after.appendChild(pin.clip);
+      else if (!below && pin.clip.parentNode === pin.after) pin.notesEl.parentNode.insertBefore(pin.clip, pin.notesEl);
+    });
+  };
+  placeClips();
+  if (lockMQ) { if (lockMQ.addEventListener) lockMQ.addEventListener('change', placeClips); else if (lockMQ.addListener) lockMQ.addListener(placeClips); }
+
   pins.forEach(function (pin) {
     if (!pin.btn) return;
     pin.btn.addEventListener('click', function () {
       var apart = pin.btn.getAttribute('aria-pressed') !== 'true';
       pin.pinned = apart ? 1 : 0;
-      pin.btn.setAttribute('aria-pressed', String(apart));
-      pin.btn.textContent = apart ? 'Put them back' : 'Separate layers';
+      setBtn(pin, apart);
       setStack(pin, pin.pinned);
     });
   });
@@ -207,17 +232,12 @@
   else { pins.forEach(function (p) { setStack(p, 0); }); steps.forEach(function (s) { s.classList.add('lit'); }); if (pipe) pipe.style.setProperty('--p', 1); }
 
   // ---------- Vision readings ----------
-  var viewer = $('#viewer'), readings = $$('.reading'), vtag = $('#viewer-tag'), slog = $('#sci-log');
+  var viewer = $('#viewer'), readings = $$('.reading'), slog = $('#sci-log');
   if (viewer && readings.length) {
     // Each reading: the measurement for ANALYSE ms, then the effect it enables wipes in; next after DWELL.
     var rds = $$('.rd', viewer), cur = 0, timer = null, fxTimer = null, visible = false, picked = false;
     var ANALYSE = 1800, DWELL = 6500;
     viewer.parentNode.style.setProperty('--dur', DWELL + 'ms');
-    var tag = function (i, fx) {
-      if (!vtag) return;
-      var r = rds[i];
-      vtag.textContent = 'ABCD'[i] + ' · ' + (fx ? '→ ' + r.dataset.fx : r.dataset.an);
-    };
     var show = function (i) {
       cur = i;
       clearTimeout(timer); clearTimeout(fxTimer);
@@ -226,15 +246,14 @@
         r.classList.remove('on'); r.setAttribute('aria-selected', String(j === i));
         if (j === i) { void r.offsetWidth; r.classList.add('on'); }
       });
-      tag(i, false);
       viewer.dataset.k = rds[i].dataset.an;
       if (slog) { slog.textContent = rds[i].dataset.say || ''; slog.style.setProperty('--n', slog.textContent.length); }
       viewer.classList.remove('analysing'); void viewer.offsetWidth; viewer.classList.add('analysing');
       var hasFx = !!rds[i].dataset.fx, dwell = hasFx ? DWELL : 3000;
       viewer.parentNode.style.setProperty('--dur', (picked ? 1 : dwell) + 'ms');
-      if (calm) { if (hasFx) { rds[i].classList.add('fx-on'); viewer.classList.remove('analysing'); tag(i, true); } return; }
+      if (calm) { if (hasFx) { rds[i].classList.add('fx-on'); viewer.classList.remove('analysing'); } return; }
       viewer.classList.remove('scanning'); void viewer.offsetWidth; viewer.classList.add('scanning');
-      if (hasFx) fxTimer = setTimeout(function () { rds[i].classList.add('fx-on'); viewer.classList.remove('analysing'); tag(i, true); }, ANALYSE);
+      if (hasFx) fxTimer = setTimeout(function () { rds[i].classList.add('fx-on'); viewer.classList.remove('analysing'); }, ANALYSE);
       if (!picked && visible) timer = setTimeout(function () { show((cur + 1) % rds.length); }, dwell);
     };
     // A click stops the auto-cycle and holds that reading with its bar full.
@@ -297,5 +316,23 @@
       });
     }, { threshold: 0.6 });
     counters.forEach(function (c) { cio.observe(c); });
+  }
+
+  // ---------- Footer wordmark: the neon fill follows the cursor; touch screens fill it once in view ----------
+  var mark = $('.footer .big');
+  if (mark) {
+    var canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    if (canHover) {
+      mark.addEventListener('pointermove', function (e) {
+        var r = mark.getBoundingClientRect();
+        mark.style.setProperty('--fill', Math.max(0, Math.min(100, (e.clientX - r.left) / r.width * 100)).toFixed(1) + '%');
+      });
+      mark.addEventListener('pointerleave', function () { mark.style.removeProperty('--fill'); });
+    } else if ('IntersectionObserver' in window) {
+      var fio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting) { mark.classList.add('filled'); fio.disconnect(); } });
+      }, { threshold: 0.6 });
+      fio.observe(mark);
+    } else mark.classList.add('filled');
   }
 })();
