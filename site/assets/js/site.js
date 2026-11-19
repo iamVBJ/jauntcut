@@ -4,7 +4,7 @@
 // - the hero reel drives the timeline: playhead, active shot, timecode, beat counter,
 //   pulse and audio meters, all at the song's 128 BPM
 // - pinned layer scenes separate in 3D as you scroll through them
-// - vision readings cycle; reels play on tap; counters, render log, terminal
+// - vision readings cycle; reels play on tap; render log, terminal
 (function () {
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -297,25 +297,6 @@
         c.style.setProperty('--mx', (e.clientX - r.left) + 'px'); c.style.setProperty('--my', (e.clientY - r.top) + 'px');
       });
     });
-  }
-
-  // ---------- Counters ----------
-  var counters = $$('[data-count]');
-  if (!calm && 'IntersectionObserver' in window) {
-    var cio = new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        if (!e.isIntersecting) return; cio.unobserve(e.target);
-        var el = e.target, to = +el.dataset.count, t0 = performance.now(), D = 1400;
-        if (to === 0) return;
-        var step = function (now) {
-          var x = Math.min(1, (now - t0) / D), y = 1 - Math.pow(1 - x, 4);
-          el.textContent = Math.round(to * y);
-          if (x < 1) requestAnimationFrame(step);
-        };
-        el.textContent = '0'; requestAnimationFrame(step);
-      });
-    }, { threshold: 0.6 });
-    counters.forEach(function (c) { cio.observe(c); });
   }
 
   // ---------- Footer wordmark: the neon fill follows the cursor; touch screens fill it once in view ----------
