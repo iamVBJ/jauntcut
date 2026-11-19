@@ -202,12 +202,6 @@ code, .mono { font-family: var(--mono); }
 .playhead::after { content: ""; position: absolute; top: -2px; left: -7px; width: 14px; height: 14px; background: var(--accent); clip-path: polygon(0 0, 100% 0, 100% 55%, 50% 100%, 0 55%); }
 .tl-meta { display: flex; justify-content: space-between; margin-top: 12px; padding-left: 54px; flex-wrap: wrap; gap: 8px; }
 
-/* ---------- TICKER ---------- */
-.ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding: 22px 0; background: var(--bg-1); }
-.ticker-row { display: flex; width: max-content; animation: drift 40s linear infinite; }
-.ticker span { font-family: var(--display); font-stretch: 62.5%; font-weight: 800; text-transform: uppercase; font-size: 46px; line-height: 1; padding: 0 28px; white-space: nowrap; display: inline-flex; align-items: center; gap: 56px; }
-.ticker span::after { content: ""; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
-.ticker span:nth-child(even) { color: transparent; -webkit-text-stroke: 1.2px var(--text-2); }
 
 /* ---------- SECTIONS ---------- */
 .sec { position: relative; padding: 150px 0; }
@@ -477,8 +471,7 @@ h3 { font-family: var(--sans); font-weight: 600; font-size: 21px; line-height: 1
 .road p { color: var(--text-2); font-size: 15.5px; }
 
 /* ---------- FOOTER ---------- */
-.footer { position: relative; padding: 90px 0 40px; border-top: 1px solid var(--line); overflow: hidden; }
-.ticker + .footer { border-top: 0; }
+.footer { position: relative; padding: 90px 0 40px; background: var(--bg-1); border-top: 1px solid var(--line-2); overflow: hidden; }
 .footer .big { display: block; font-family: var(--display); font-stretch: 62.5%; font-weight: 800; text-transform: uppercase; font-size: clamp(90px, 22vw, 340px); line-height: .8; letter-spacing: -.01em; color: transparent; -webkit-text-stroke: 1.5px var(--accent); background: linear-gradient(var(--accent), var(--accent)) no-repeat; background-size: var(--fill, 0%) 100%; -webkit-background-clip: text; background-clip: text; transition: background-size .6s var(--ease); user-select: none; }
 /* Neon outline at rest; the solid fill follows the cursor across it (site.js), or fills once in view on touch screens */
 .footer .big.filled { --fill: 100%; transition-duration: 1.4s; }
@@ -574,7 +567,6 @@ td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
   .tl-grid .hd { margin-right: 6px; font-size: 9px; }
   .tl-meta { padding-left: 0; }
   .ruler span:last-child { transform: translateX(-100%); }
-  .ticker span { font-size: 32px; gap: 36px; padding: 0 18px; }
   .sec { padding: 96px 0; }
   .sec-head { grid-template-columns: 1fr; gap: 16px; margin-bottom: 44px; }
   .sec-num { padding-top: 0; }
@@ -651,6 +643,6 @@ td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001s !important; animation-iteration-count: 1 !important; transition-duration: .001s !important; transition-delay: 0s !important; }
-  .strip, .ticker-row { animation: none !important; }
+  .strip { animation: none !important; }
   body::after { animation: none; }
 }
